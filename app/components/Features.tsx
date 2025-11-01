@@ -135,7 +135,7 @@ export default function Features() {
   }, [])
 
   return (
-    <section id="features" className="py-32 bg-gray-50 relative">
+    <section id="features" className="py-24 sm:py-32 bg-gray-50 relative">
       <div className="absolute inset-0 opacity-8">
         <svg width="100%" height="100%" className="absolute inset-0">
           <defs>
@@ -151,13 +151,13 @@ export default function Features() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-light tracking-wider mb-6 font-mono">CORE FEATURES</h2>
-          <div className="w-32 h-px bg-black mx-auto mb-8"></div>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-5xl font-light tracking-wider mb-6 font-mono">CORE FEATURES</h2>
+          <div className="w-24 sm:w-32 h-px bg-black mx-auto mb-6 sm:mb-8"></div>
+          <p className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg">
             Global eSIM connectivity with crypto payments. No roaming fees, instant activation, privacy-first architecture.
             <br />
-            <span className="text-sm font-mono mt-2 inline-block">
+            <span className="text-xs sm:text-sm font-mono mt-2 inline-block">
               Built for Solana Seeker phones, expanding to all eSIM devices
             </span>
           </p>
@@ -221,85 +221,129 @@ export default function Features() {
           </div>
         </div>
 
-        <div className="mt-20 bg-white border-2 border-gray-200 p-10">
-          <h3 className="font-mono font-bold text-xl mb-10 text-center tracking-wide">END-TO-END DATA FLOW</h3>
-          
+        <div className="mt-16 sm:mt-20 bg-white border-2 border-gray-200 p-6 sm:p-10">
+          <h3 className="font-mono font-bold text-lg sm:text-xl mb-8 sm:mb-10 text-center tracking-wide">END-TO-END DATA FLOW</h3>
+
           {/* Main Flow */}
-          <div className="flex justify-center items-center mb-12">
+          <div className="flex flex-col items-center gap-10 lg:flex-row lg:justify-center lg:gap-6 mb-12">
             {/* Step 1: User Request */}
             <div className="text-center">
               <div className="w-20 h-20 border-2 border-black flex items-center justify-center mb-3 relative">
-                <span className="text-sm font-mono font-bold">USER</span>
-                <div className="absolute -top-1 -right-1 w-5 h-5 bg-black rounded-full animate-ping" style={{ animationDuration: "2s" }}></div>
+                <span className="text-xs sm:text-sm font-mono font-bold">USER</span>
+                <div
+                  className="absolute -top-1 -right-1 w-5 h-5 bg-black rounded-full animate-ping"
+                  style={{ animationDuration: "2s" }}
+                ></div>
               </div>
               <div className="text-xs font-mono text-gray-500 mb-1 uppercase tracking-wide">SELECT PLAN</div>
               <div className="text-xs text-gray-400 font-mono">Solana Seeker</div>
             </div>
 
             {/* Arrow 1 */}
-            <div className="flex-1 h-px bg-gray-300 relative overflow-hidden mx-4" style={{ maxWidth: "120px" }}>
-              <div className="absolute top-0 left-0 h-full bg-black w-full" style={{ opacity: 0.3 }}></div>
-              <div 
-                className="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-black rounded-full"
+            <div
+              className="hidden lg:block h-px bg-gray-300 relative overflow-hidden w-24 xl:w-32"
+              style={{ opacity: 0.8 }}
+            >
+              <div className="absolute inset-0 bg-black" style={{ opacity: 0.3 }}></div>
+              <div
+                className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-black rounded-full"
                 style={{ animation: "flowRight 4s linear infinite" }}
               ></div>
+            </div>
+            <div className="lg:hidden flex flex-col items-center">
+              <div className="w-px h-10 bg-gray-300 relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-black rounded-full animate-bounce"></div>
+              </div>
             </div>
 
             {/* Step 2: Crypto Payment */}
             <div className="text-center">
               <div className="w-20 h-20 border-2 border-black flex items-center justify-center mb-3 relative">
                 <span className="text-xs font-mono font-bold">SOL</span>
-                <div className="absolute inset-0 border-2 border-black opacity-0 animate-ping" style={{ animationDuration: "2s", animationDelay: "0.5s" }}></div>
+                <div
+                  className="absolute inset-0 border-2 border-black opacity-0 animate-ping"
+                  style={{ animationDuration: "2s", animationDelay: "0.5s" }}
+                ></div>
               </div>
               <div className="text-xs font-mono text-gray-500 mb-1 uppercase tracking-wide">PAYMENT</div>
               <div className="text-xs text-gray-400 font-mono">Seed Vault</div>
             </div>
 
             {/* Arrow 2 */}
-            <div className="flex-1 h-px bg-gray-300 relative overflow-hidden mx-4" style={{ maxWidth: "120px" }}>
-              <div className="absolute top-0 left-0 h-full bg-black w-full" style={{ opacity: 0.3 }}></div>
-              <div 
-                className="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-black rounded-full"
+            <div
+              className="hidden lg:block h-px bg-gray-300 relative overflow-hidden w-24 xl:w-32"
+              style={{ opacity: 0.8 }}
+            >
+              <div className="absolute inset-0 bg-black" style={{ opacity: 0.3 }}></div>
+              <div
+                className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-black rounded-full"
                 style={{ animation: "flowRight 4s linear infinite 1s" }}
               ></div>
+            </div>
+            <div className="lg:hidden flex flex-col items-center">
+              <div className="w-px h-10 bg-gray-300 relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-black rounded-full animate-bounce" style={{ animationDuration: "2s" }}></div>
+              </div>
             </div>
 
             {/* Step 3: Smart Contract */}
             <div className="text-center">
               <div className="w-20 h-20 border-2 border-black flex items-center justify-center mb-3 relative bg-gray-50">
                 <span className="text-xs font-mono font-bold">SC</span>
-                <div className="absolute inset-0 border-2 border-black opacity-0 animate-ping" style={{ animationDuration: "2s", animationDelay: "1s" }}></div>
+                <div
+                  className="absolute inset-0 border-2 border-black opacity-0 animate-ping"
+                  style={{ animationDuration: "2s", animationDelay: "1s" }}
+                ></div>
               </div>
               <div className="text-xs font-mono text-gray-500 mb-1 uppercase tracking-wide">VERIFY</div>
               <div className="text-xs text-gray-400 font-mono">On-chain</div>
             </div>
 
             {/* Arrow 3 */}
-            <div className="flex-1 h-px bg-gray-300 relative overflow-hidden mx-4" style={{ maxWidth: "120px" }}>
-              <div className="absolute top-0 left-0 h-full bg-black w-full" style={{ opacity: 0.3 }}></div>
-              <div 
-                className="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-black rounded-full"
+            <div
+              className="hidden lg:block h-px bg-gray-300 relative overflow-hidden w-24 xl:w-32"
+              style={{ opacity: 0.8 }}
+            >
+              <div className="absolute inset-0 bg-black" style={{ opacity: 0.3 }}></div>
+              <div
+                className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-black rounded-full"
                 style={{ animation: "flowRight 4s linear infinite 2s" }}
               ></div>
+            </div>
+            <div className="lg:hidden flex flex-col items-center">
+              <div className="w-px h-10 bg-gray-300 relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-black rounded-full animate-bounce" style={{ animationDuration: "2.5s" }}></div>
+              </div>
             </div>
 
             {/* Step 4: API Call */}
             <div className="text-center">
               <div className="w-20 h-20 border-2 border-black flex items-center justify-center mb-3 relative">
                 <span className="text-xs font-mono font-bold">API</span>
-                <div className="absolute -top-1 -right-1 w-5 h-5 bg-black rounded-full animate-ping" style={{ animationDuration: "2s", animationDelay: "1.5s" }}></div>
+                <div
+                  className="absolute -top-1 -right-1 w-5 h-5 bg-black rounded-full animate-ping"
+                  style={{ animationDuration: "2s", animationDelay: "1.5s" }}
+                ></div>
               </div>
               <div className="text-xs font-mono text-gray-500 mb-1 uppercase tracking-wide">PROVISION</div>
               <div className="text-xs text-gray-400 font-mono">eSIM Provider</div>
             </div>
 
             {/* Arrow 4 */}
-            <div className="flex-1 h-px bg-gray-300 relative overflow-hidden mx-4" style={{ maxWidth: "120px" }}>
-              <div className="absolute top-0 left-0 h-full bg-black w-full" style={{ opacity: 0.3 }}></div>
-              <div 
-                className="absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-black rounded-full"
+            <div
+              className="hidden lg:block h-px bg-gray-300 relative overflow-hidden w-24 xl:w-32"
+              style={{ opacity: 0.8 }}
+            >
+              <div className="absolute inset-0 bg-black" style={{ opacity: 0.3 }}></div>
+              <div
+                className="absolute top-1/2 -translate-y-1/2 w-2 h-2 bg-black rounded-full"
                 style={{ animation: "flowRight 4s linear infinite 3s" }}
               ></div>
+            </div>
+            <div className="lg:hidden flex flex-col items-center">
+              <div className="w-px h-10 bg-gray-300 relative">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-black rounded-full animate-bounce" style={{ animationDuration: "2.8s" }}></div>
+              </div>
             </div>
 
             {/* Step 5: Activation */}
@@ -314,7 +358,7 @@ export default function Features() {
           </div>
 
           {/* Technical Details */}
-          <div className="grid grid-cols-5 gap-6 mt-12 pt-10 border-t-2 border-gray-200">
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6 mt-10 sm:mt-12 pt-8 sm:pt-10 border-t-2 border-gray-200">
             <div className="text-center">
               <div className="text-xs font-mono text-gray-400 mb-3 uppercase tracking-wider">STEP 1</div>
               <div className="text-sm font-mono font-bold mb-2 tracking-wide">PLAN SELECTION</div>
@@ -343,7 +387,7 @@ export default function Features() {
           </div>
 
           {/* Performance Metrics */}
-          <div className="grid grid-cols-3 gap-6 mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-10">
             <div className="text-center bg-gray-50 p-4 border border-gray-200">
               <div className="text-2xl font-mono font-bold">~3sec</div>
               <div className="text-xs text-gray-500 font-mono uppercase tracking-wide">END-TO-END TIME</div>

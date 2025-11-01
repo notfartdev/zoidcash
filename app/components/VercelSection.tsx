@@ -79,7 +79,7 @@ export default function VercelSection() {
   }, [])
 
   return (
-    <section id="vercel" className="py-32 bg-black text-white relative overflow-hidden">
+    <section id="vercel" className="py-24 sm:py-32 bg-black text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <svg width="100%" height="100%">
           <defs>
@@ -100,17 +100,17 @@ export default function VercelSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-light tracking-wider mb-6 font-mono">PLATFORM INFRASTRUCTURE</h2>
-          <div className="w-32 h-px bg-white mx-auto mb-8"></div>
-          <p className="text-gray-400 max-w-3xl mx-auto text-lg">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-5xl font-light tracking-wider mb-6 font-mono">PLATFORM INFRASTRUCTURE</h2>
+          <div className="w-24 sm:w-32 h-px bg-white mx-auto mb-6 sm:mb-8"></div>
+          <p className="text-gray-400 max-w-3xl mx-auto text-base sm:text-lg">
             Enterprise-grade infrastructure combining Solana blockchain, global eSIM networks, and edge computing
           </p>
         </div>
 
-        <div className="mb-20 bg-gray-900 border-2 border-gray-700 p-8">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="font-mono font-bold text-xl tracking-wide">NETWORK STATUS</h3>
+        <div className="mb-16 sm:mb-20 bg-gray-900 border-2 border-gray-700 p-6 sm:p-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-6">
+            <h3 className="font-mono font-bold text-lg sm:text-xl tracking-wide">NETWORK STATUS</h3>
             <div
               className={`px-4 py-2 text-sm font-mono ${
                 deploymentStatus === "LIVE"
@@ -150,13 +150,13 @@ export default function VercelSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 sm:mb-20">
           {infrastructureFeatures.map((feature, index) => {
             const IconComponent = feature.icon
             return (
               <div
                 key={index}
-                className="border-2 border-gray-700 bg-gray-900 p-8 relative group hover:border-gray-500 transition-all duration-300 hover:transform hover:-translate-y-2"
+                className="border-2 border-gray-700 bg-gray-900 p-6 sm:p-8 relative group hover:border-gray-500 transition-all duration-300 hover:transform hover:-translate-y-2"
               >
                 <div className="absolute top-6 right-6">
                   <div className="w-3 h-3 bg-white rounded-full opacity-60 animate-pulse"></div>
@@ -191,8 +191,8 @@ export default function VercelSection() {
           })}
         </div>
 
-        <div className="border-2 border-gray-700 bg-gray-900 p-10">
-          <h3 className="font-mono font-bold text-2xl mb-12 text-center tracking-wide">PLATFORM ARCHITECTURE</h3>
+        <div className="border-2 border-gray-700 bg-gray-900 p-6 sm:p-10">
+          <h3 className="font-mono font-bold text-xl sm:text-2xl mb-10 sm:mb-12 text-center tracking-wide">PLATFORM ARCHITECTURE</h3>
 
           <div className="relative">
             {/* Layer 1: Client Layer */}
@@ -200,7 +200,7 @@ export default function VercelSection() {
               <div className="text-center mb-8">
                 <div className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-3">CLIENT LAYER</div>
               </div>
-              <div className="flex justify-center items-center space-x-12">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12">
                 <div className="text-center group cursor-pointer">
                   <div className="w-24 h-24 border-2 border-white flex flex-col items-center justify-center mb-3 relative transition-all duration-300 group-hover:border-green-400 group-hover:shadow-lg group-hover:shadow-green-400/50">
                     <span className="text-xs font-mono font-bold">SEEKER</span>
@@ -247,7 +247,7 @@ export default function VercelSection() {
               <div className="text-center mb-8">
                 <div className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-3">APPLICATION LAYER</div>
               </div>
-              <div className="flex justify-center items-center space-x-10">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-10">
                 <div className="text-center group cursor-pointer">
                   <div className="w-20 h-20 border-2 border-white flex items-center justify-center mb-3 relative transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:shadow-lg group-hover:shadow-white/50">
                     <span className="text-xs font-mono font-bold transition-colors duration-300">APP</span>
@@ -289,7 +289,7 @@ export default function VercelSection() {
               <div className="text-center mb-8">
                 <div className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-3">INFRASTRUCTURE LAYER</div>
               </div>
-              <div className="flex justify-center items-center space-x-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
                 <div className="text-center group cursor-pointer">
                   <div className="w-24 h-24 border-2 border-white flex flex-col items-center justify-center mb-3 relative transition-all duration-300 group-hover:border-yellow-400 group-hover:shadow-lg group-hover:shadow-yellow-400/50">
                     <span className="text-xs font-mono font-bold">SOLANA</span>
@@ -345,7 +345,7 @@ export default function VercelSection() {
               <div className="text-center mb-8">
                 <div className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-3">ESIM PROVIDER LAYER</div>
               </div>
-              <div className="flex justify-center items-center space-x-10">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-10">
                 <div className="text-center group cursor-pointer">
                   <div className="w-20 h-20 border-2 border-white flex items-center justify-center mb-3 relative transition-all duration-300 group-hover:border-cyan-400 group-hover:shadow-lg group-hover:shadow-cyan-400/50 group-hover:bg-gray-800">
                     <span className="text-xs font-mono font-bold transition-colors duration-300">TIER-1</span>
@@ -371,7 +371,7 @@ export default function VercelSection() {
 
             {/* Branching connections to networks */}
             <div className="flex justify-center mb-8">
-              <svg width="400" height="60" className="overflow-visible">
+              <svg width="400" height="60" className="overflow-visible w-full max-w-xs sm:max-w-md">
                 <line x1="200" y1="0" x2="200" y2="30" stroke="#4B5563" strokeWidth="1" />
                 <line x1="200" y1="30" x2="100" y2="60" stroke="#4B5563" strokeWidth="1" strokeDasharray="4,4">
                   <animate attributeName="stroke-dashoffset" values="0;-8" dur="1s" repeatCount="indefinite" />
@@ -393,7 +393,7 @@ export default function VercelSection() {
               <div className="text-center mb-8">
                 <div className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-3">GLOBAL NETWORK LAYER</div>
               </div>
-              <div className="flex justify-center items-center space-x-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
                 <div className="text-center group cursor-pointer">
                   <div className="w-20 h-20 border-2 border-white flex flex-col items-center justify-center mb-3 relative transition-all duration-300 group-hover:border-green-400 group-hover:shadow-lg group-hover:shadow-green-400/50">
                     <span className="text-lg font-mono font-bold">4G</span>
@@ -425,8 +425,8 @@ export default function VercelSection() {
           </div>
 
           {/* Tech Stack Details */}
-          <div className="mt-16 pt-10 border-t border-gray-700">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-gray-700">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
               <div>
                 <div className="text-2xl font-mono font-bold mb-2">Solana</div>
                 <div className="text-xs text-gray-400 font-mono uppercase tracking-wide">Payment Rail</div>

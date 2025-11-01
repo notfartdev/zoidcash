@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Github, Mail } from "lucide-react"
 
 export default function Footer() {
   const [systemStatus, setSystemStatus] = useState({
@@ -27,7 +27,7 @@ export default function Footer() {
   }, [])
 
   return (
-    <footer id="contact" className="bg-gray-50 border-t-2 border-gray-200 py-20 relative">
+    <footer id="contact" className="bg-gray-50 border-t-2 border-gray-200 py-16 sm:py-20 relative">
       <div className="absolute inset-0 opacity-5">
         <div
           className="h-full w-full animate-pulse"
@@ -52,10 +52,10 @@ export default function Footer() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="mb-16 bg-white border-2 border-gray-200 p-6">
-          <div className="flex items-center justify-between">
-            <h3 className="font-mono font-bold text-lg">SYSTEM STATUS</h3>
-            <div className="flex items-center space-x-6 text-sm font-mono">
+        <div className="mb-12 sm:mb-16 bg-white border-2 border-gray-200 p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
+            <h3 className="font-mono font-bold text-base sm:text-lg">SYSTEM STATUS</h3>
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm font-mono">
               {Object.entries(systemStatus).map(([key, status]) => (
                 <div key={key} className="flex items-center space-x-2 transition-all duration-500">
                   <div
@@ -76,19 +76,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
-            <h3 className="font-mono font-bold text-4xl mb-8 tracking-wider">
+            <h3 className="font-mono font-bold text-3xl sm:text-4xl mb-6 sm:mb-8 tracking-wider">
               SEEKER<span className="font-light">SIM</span>
               <sup className="text-lg">™</sup>
             </h3>
-            <p className="text-gray-600 mb-10 leading-relaxed text-lg">
+            <p className="text-gray-600 mb-8 sm:mb-10 leading-relaxed text-base sm:text-lg">
               Global eSIM connectivity platform powered by Solana blockchain. Pay with crypto, activate instantly in 180+ countries,
               with zero roaming fees. GSMA SGP.22 compliant with zero-knowledge privacy protection and AI-driven network optimization.
             </p>
 
-            <div className="border-2 border-gray-300 p-8 inline-block hover:border-black transition-colors duration-300 mb-8">
-              <div className="flex items-center space-x-6">
+            <div className="border-2 border-gray-300 p-6 sm:p-8 inline-block w-full sm:w-auto hover:border-black transition-colors duration-300 mb-8">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center sm:space-x-6 space-y-4 sm:space-y-0">
                 <div className="w-16 h-16 border-2 border-black flex items-center justify-center">
                   <span className="text-2xl font-mono font-bold">G</span>
                 </div>
@@ -100,7 +100,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 text-sm">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 text-xs sm:text-sm">
               <div>
                 <div className="text-gray-500 text-xs font-mono mb-2">API VERSION</div>
                 <div className="font-mono font-bold text-lg">v2.1.0</div>
@@ -125,19 +125,6 @@ export default function Footer() {
             <div className="space-y-6">
               <div className="group">
                 <div className="flex items-center space-x-3 mb-2">
-                  <MapPin size={16} className="text-gray-500" />
-                  <div className="text-gray-500 text-xs font-mono uppercase tracking-wide">HEADQUARTERS</div>
-                </div>
-                <div className="group-hover:text-gray-600 transition-colors pl-7">
-                  Global Operations
-                  <br />
-                  Blockchain Infrastructure Hub
-                  <br />
-                  Edge Network Deployment
-                </div>
-              </div>
-              <div className="group">
-                <div className="flex items-center space-x-3 mb-2">
                   <Mail size={16} className="text-gray-500" />
                   <div className="text-gray-500 text-xs font-mono uppercase tracking-wide">EMAIL</div>
                 </div>
@@ -145,19 +132,6 @@ export default function Footer() {
                   contact@seekersim.com
                   <br />
                   support@seekersim.com
-                </div>
-              </div>
-              <div className="group">
-                <div className="flex items-center space-x-3 mb-2">
-                  <Phone size={16} className="text-gray-500" />
-                  <div className="text-gray-500 text-xs font-mono uppercase tracking-wide">SUPPORT</div>
-                </div>
-                <div className="font-mono group-hover:text-gray-600 transition-colors pl-7">
-                  24/7 TECHNICAL
-                  <br />
-                  Blockchain Support
-                  <br />
-                  Solana Integration
                 </div>
               </div>
               <div className="group">
@@ -176,6 +150,22 @@ export default function Footer() {
                   @seekersim
                   <br />
                   <span className="text-sm text-gray-500">Follow for updates</span>
+                </a>
+              </div>
+              <div className="group">
+                <div className="flex items-center space-x-3 mb-2">
+                  <Github size={16} className="text-gray-500" />
+                  <div className="text-gray-500 text-xs font-mono uppercase tracking-wide">GITHUB</div>
+                </div>
+                <a
+                  href="https://github.com/notfartdev/seekersim"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono group-hover:text-gray-600 transition-colors pl-7 hover:underline"
+                >
+                  notfartdev/seekersim
+                  <br />
+                  <span className="text-sm text-gray-500">View source & issues</span>
                 </a>
               </div>
             </div>
@@ -213,13 +203,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 pt-10 border-t-2 border-gray-300">
+        <div className="mt-16 sm:mt-20 pt-8 sm:pt-10 border-t-2 border-gray-300">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-500 font-mono mb-6 md:mb-0">
               © 2025 SEEKERSIM™. ALL RIGHTS RESERVED. • BLOCKCHAIN ESIM INFRASTRUCTURE
             </div>
 
-            <div className="flex items-center space-x-8 text-sm font-mono">
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 sm:gap-8 text-xs sm:text-sm font-mono">
               <span className="flex items-center space-x-2 group">
                 <div className="w-2 h-2 bg-black animate-pulse"></div>
                 <span className="group-hover:text-gray-600 transition-colors">SOLANA BLOCKCHAIN</span>

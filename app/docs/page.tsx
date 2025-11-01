@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Suspense } from "react"
 import LoadingSpinner from "../components/LoadingSpinner"
 import Navigation from "../components/Navigation"
@@ -169,6 +170,47 @@ function DocsContent() {
                   Yet the $60B+ global roaming market remains fragmented and user-hostile
                 </p>
               </div>
+
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Beneath the roaming pain points sits a deeper structural issue with Remote SIM Provisioning (RSP).
+                The entire lifecycle depends on exchanging keys and X.509 certificates between user equipment,
+                mobile network operators, and subscription managers. Trust is concentrated in a small set of
+                intermediaries who manually orchestrate profile ordering, authentication, and switching. This closed
+                environment erodes transparency, introduces delays, and forces the user to blindly trust every step of
+                the chain.
+              </p>
+
+              <div className="bg-white border-2 border-gray-200 p-6 mb-8">
+                <h4 className="font-mono font-bold text-lg mb-4">❗ RSP PROBLEM SUMMARY</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• Trust between service providers and consumers hinges on opaque intermediaries.</li>
+                  <li>• Profile management is complex, centralized, and prone to inefficiencies or data misuse.</li>
+                  <li>• Manual processes remain embedded in activation, switching, and settlement workflows.</li>
+                  <li>• TLS tunnels do the heavy lifting for core security, leaving the protocol brittle to passive attacks.</li>
+                  <li>• Sensitive identifiers leak throughout the flow, enabling correlation and tracking.</li>
+                  <li>• User plane data lacks integrity guarantees, exposing sessions to tampering.</li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-50 border border-gray-200 p-6 mb-10">
+                <h4 className="font-mono font-bold text-lg mb-4">Personas and Interactions</h4>
+                <p className="text-sm text-gray-600 mb-6">
+                  The legacy RSP model relies on a tightly coupled dance between the Mobile Network Operator (MNO),
+                  Subscription Manager (SM-DP+), Local Profile Assistant (LPA), and the eUICC embedded in the device.
+                  Certification bodies such as the GSMA root the hierarchy, while equipment manufacturers must ensure
+                  hardware security. The graphic below captures the trust boundaries and certificate chains required
+                  just to deliver a single profile.
+                </p>
+                <div className="border border-dashed border-gray-300 p-4 bg-white">
+                  <Image
+                    src="/rsp-architecture.png"
+                    alt="Legacy RSP personas and interactions"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
             </div>
           </section>
 
@@ -226,6 +268,37 @@ function DocsContent() {
                   <div>
                     <div className="text-3xl font-mono font-bold mb-2">100%</div>
                     <div className="text-xs text-gray-400 font-mono uppercase">Automated</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 border-2 border-gray-200 p-6">
+                <h4 className="font-mono font-bold text-lg mb-4">Approach</h4>
+                <p className="text-sm text-gray-700 mb-4">
+                  OpenRSP democratizes remote SIM provisioning by decentralizing trust, enforcing privacy-preserving
+                  cryptography, and automating orchestration with smart contracts. Sensitive profile data never leaves
+                  hardware-secure boundaries, yet every entity can independently verify compliance. The protocol
+                  leverages a blend of zero-knowledge proofs, secure enclaves, and programmable settlement on Solana to
+                  deliver end-to-end guarantees that traditional stacks cannot match.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="border border-gray-200 p-4 bg-white">
+                    <h5 className="font-mono font-bold text-sm mb-2">Modern Cryptography</h5>
+                    <ul className="space-y-1 text-xs text-gray-600">
+                      <li>• Zero Knowledge Proofs (zkCX, privacy-preserving certificate exchange)</li>
+                      <li>• ZKP-based revocation checking and EID shielding</li>
+                      <li>• Identity-Based Non-Interactive Key Exchange (IBNIKE) for Secure Identifiers</li>
+                      <li>• Multi-Party Oblivious Transfers (MPOT) for collaborative provisioning</li>
+                    </ul>
+                  </div>
+                  <div className="border border-gray-200 p-4 bg-white">
+                    <h5 className="font-mono font-bold text-sm mb-2">Automation & Ownership</h5>
+                    <ul className="space-y-1 text-xs text-gray-600">
+                      <li>• Smart contracts manage deposits, refunds, and settlement instantly</li>
+                      <li>• TEEs execute device-side operations while preserving secrets</li>
+                      <li>• On-chain registry records proofs for continuous compliance</li>
+                      <li>• Users retain custody of their profiles and activation credentials</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -291,6 +364,27 @@ function DocsContent() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              <div className="my-10 bg-white border-2 border-gray-200 p-6">
+                <h4 className="font-mono font-bold text-lg mb-4">Provisioning Workflow Deep Dive</h4>
+                <p className="text-sm text-gray-600 mb-4">
+                  Once the Local Profile Assistant (LPA) initiates provisioning, the device must locate the
+                  Subscription Manager (SM-DP+) responsible for delivering the encrypted carrier profile. Depending on
+                  the activation method, the SM address may be obtained via QR code, manual entry, firmware defaults, or
+                  GSMA discovery services. After resolving the endpoint, the LPA establishes an HTTPS channel, validates
+                  X.509 certificates, negotiates a secure tunnel with the eUICC, and finally installs the encrypted
+                  profile using either activation codes or eSIM identifiers.
+                </p>
+                <div className="border border-dashed border-gray-300 p-4 bg-gray-50">
+                  <Image
+                    src="/esim-installation.png"
+                    alt="Detailed eSIM profile provisioning flow"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
 
               <div className="mt-8 bg-blue-50 border border-blue-200 p-6">
@@ -399,6 +493,26 @@ function DocsContent() {
                       <div className="text-xs text-gray-600 font-mono">Support</div>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              <div className="mt-12 border-2 border-gray-200 p-6 bg-white">
+                <h4 className="font-mono font-bold text-lg mb-4">Certificate Trust Distribution</h4>
+                <p className="text-sm text-gray-600 mb-4">
+                  GSMA&apos;s root certificate authority underpins every interaction in the RSP stack. Today, end entities
+                  must trust that the certificate chain presented by upstream parties remains valid and uncompromised. By
+                  introducing zero-knowledge certificate exchange (zkCX), OpenRSP shifts verification from closed data
+                  centers to on-chain verifiers. Entities publish proofs that their X.509 certificates satisfy policy
+                  constraints without leaking sensitive metadata, enabling anyone to validate authenticity programmatically.
+                </p>
+                <div className="border border-dashed border-gray-300 p-4 bg-gray-50">
+                  <Image
+                    src="/openrsp-ci-zkp-solution.png"
+                    alt="Certificate trust model enhanced with zero-knowledge proofs"
+                    width={1200}
+                    height={900}
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
             </div>

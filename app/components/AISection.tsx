@@ -121,26 +121,26 @@ export default function AISection() {
   }
 
   return (
-    <section id="ai" className="py-32 bg-white relative">
+    <section id="ai" className="py-24 sm:py-32 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-light tracking-wider mb-6 font-mono">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-3xl sm:text-5xl font-light tracking-wider mb-6 font-mono">
             SEEKER<span className="font-bold">OS</span>™ AI
           </h2>
-          <div className="w-32 h-px bg-black mx-auto mb-8"></div>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+          <div className="w-24 sm:w-32 h-px bg-black mx-auto mb-6 sm:mb-8"></div>
+          <p className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg">
             AI-driven network optimization, privacy protection, and usage intelligence for seamless global connectivity.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="space-y-6">
             {panels.map((panel, index) => {
               const IconComponent = panel.icon
               return (
                 <div
                   key={index}
-                  className={`border-2 p-8 cursor-pointer transition-all duration-300 relative overflow-hidden ${
+                  className={`border-2 p-6 sm:p-8 cursor-pointer transition-all duration-300 relative overflow-hidden ${
                     activePanel === index ? "border-black bg-gray-50" : "border-gray-200 hover:border-gray-400"
                   }`}
                   onClick={() => setActivePanel(index)}
@@ -165,7 +165,7 @@ export default function AISection() {
 
                   {activePanel === index && (
                     <div className="space-y-6 animate-fadeIn">
-                      <div className="grid grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {panel.metrics.map((metric, i) => (
                           <span key={i} className="bg-black text-white px-3 py-2 text-xs font-mono text-center">
                             {metric}
@@ -193,7 +193,7 @@ export default function AISection() {
           </div>
 
           <div className="space-y-8">
-            <div className="relative border-2 border-gray-200 bg-gray-50 p-8 transition-all duration-300 hover:border-black hover:shadow-xl group">
+            <div className="relative border-2 border-gray-200 bg-gray-50 p-6 sm:p-8 transition-all duration-300 hover:border-black hover:shadow-xl group">
               <div className="flex items-center justify-between mb-6">
                 <h4 className="font-mono font-bold text-lg">NEURAL NETWORK ACTIVITY</h4>
                 <div className="text-xs font-mono text-gray-500">
@@ -206,7 +206,7 @@ export default function AISection() {
                   )}
                 </div>
               </div>
-              <div className="relative" style={{ height: "460px", paddingBottom: "2.5rem" }}>
+              <div className="relative h-[360px] sm:h-[460px] pb-10">
                 <svg
                   width="100%"
                   height="100%"
@@ -551,7 +551,7 @@ export default function AISection() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div className="border-2 border-gray-200 p-6 bg-white transition-all duration-300 hover:border-black hover:shadow-md">
                 <div className="text-xs font-mono text-gray-500 mb-2 uppercase tracking-wide">ACTIVE USERS</div>
                 <div className="text-3xl font-mono font-bold transition-all duration-300" style={{ transition: "all 0.3s ease-out" }}>

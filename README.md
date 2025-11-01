@@ -10,6 +10,30 @@ Despite its promise, RSP remains immature, with inconsistent security implementa
 
 We present OpenRSP, a decentralized protocol addressing the current RSP vulnerablities and enhances security, privacy, and interoperability of multiple parties responsible to securely provision eSIMs through cutting-edge cryptographic techniques, smart contracts, decentralized blockchains and Trusted Execution Environment(TEEs). OpenRSP replaces centralized trust points with blockchain and smart contracts, enabling independent verification of transactions. It integrates zero-knowledge proofs (ZKPs) within the X.509 certificate chain to protect sensitive information and introduces Trusted Execution Environments (TEEs) for user plane data integrity with local-first compute. By eliminating single points of failure and empowering entities to collaboratively manage profiles in a trustless environment, OpenRSP addresses the critical challenges of RSP. This approach fortifies telecom infrastructure, safeguards consumer data, and promotes a more resilient, open, and secure mobile ecosystem.
 
+## SeekerSIM Platform Overview
+
+SeekerSIM™ is the production playground for OpenRSP: a blockchain-native eSIM connectivity platform built for the Solana Seeker phone and any eSIM-capable device. The product experience showcased at [seekersim.vercel.app](https://seekersim.vercel.app) demonstrates how global connectivity, crypto payments, and privacy-first identity converge into a single instant activation flow. The public repository is available at [notfartdev/seekersim](https://github.com/notfartdev/seekersim), which contains the Next.js 14 application, Tailwind design system, and animated data/AI visualisations used throughout the marketing site and docs.
+
+### Product Concept
+
+- **Borderless activation:** Users select a destination plan and activate an eSIM within seconds—no physical SIM swaps, no roaming shock.
+- **Crypto-native payments:** SOL/USDC pay-as-you-go billing runs on Solana smart contracts, keeping fees below $0.01 with ~1s finality.
+- **Privacy by design:** Zero-knowledge proof workflows and decentralized identifiers minimize personally identifiable data while preserving compliance.
+
+### Core Experience & Features
+
+- **ICCID Search / SM-DP+ Integration:** Real-time profile lookup, GSMA SGP.22 compliance, and secure QR provisioning pipelines.
+- **Crypto Payments & Global Coverage:** 180+ countries, 650+ carrier networks, automated failover, and smart contract clearing.
+- **Privacy First Architecture:** zk-KYC, DID support, and encrypted delivery channels deliver trustless provisioning.
+- **SeekerOS™ AI:** Neural activity visualisation, live metrics (active users, network match, activation time, cost savings), and AI panels for network selection, privacy, and usage intelligence.
+- **Platform Infrastructure:** Layered architecture covering client apps, Seed Vault integration, Solana mainnet, edge APIs (Vercel), IPFS storage, zk-KYC identity services, and Tier-1/Tier-2 eSIM aggregators.
+
+### Project Resources
+
+- **Live product:** [seekersim.vercel.app](https://seekersim.vercel.app)
+- **Source code:** [github.com/notfartdev/seekersim](https://github.com/notfartdev/seekersim)
+- **Documentation:** `/docs` route in the deployed app for market thesis, architecture deep dives, and developer onboarding.
+
 ## Preliminaries
 
 ### eSIM
@@ -32,7 +56,7 @@ The GSM Association (commonly referred to as 'the GSMA' or Global System for Mob
 - **LPA**: A system application, a software component within eSIM-enabled devices that manages eSIM profiles, interacts with the eUICC (embedded Universal Integrated Circuit Card) chip within the device to store and manage eSIM profile, enabling seamless downloading, installation, and management of mobile network profiles without needing physical SIM cards.
 - **eUICC Chip**: Simply put, it's a SIM card component that lets you switch mobile network operators (MNOs) remotely.
 
-![RSP Architecture](https://private-user-images.githubusercontent.com/75042859/376275364-b8b69571-2d4e-4e80-850a-b5e867434349.png)
+![RSP Architecture](./public/rsp-architecture.png)
 
 ### eSIM
 
@@ -103,7 +127,7 @@ Unlike traditional SIM cards, eSIMs can be integrated into a System-on-Chip (SoC
 
 This domain-based architecture adds a layer of abstraction and security, allowing eSIMs to serve its purpose ensuring compliance with security and regulatory requirements.
 
-![eSIM Installation](https://private-user-images.githubusercontent.com/75042859/374897409-837164db-3ade-431b-a16f-53724a9b87b0.png)
+![eSIM Installation](./public/esim-installation.png)
 
 ### X.509 Certificates and Chain of Trust
 
@@ -114,6 +138,14 @@ The Chain of Trust in X.509 certificates is a hierarchical structure used to ver
 - To establish trust, each certificate in the chain must be verified by the certificate above it.
 
 Read more about Chain of Trust [here](https://www.gsma.com/).
+
+![ZKP Certificate Distribution](./public/openrsp-ci-zkp-solution.png)
+
+OpenRSP replaces blind trust in certificate authorities with verifiable proofs. Each entity—EUM, eUICC, SM-DP+,
+SM-DS—generates a zero-knowledge proof that its X.509 certificate satisfies GSMA policies without exposing sensitive
+fields. A public on-chain verifier confirms validity, and proofs are registered so participants can reuse them without
+disclosing the certificates themselves. This distribution of trust removes the need to rely on centralized data centers
+and allows any stakeholder to audit authenticity programmatically.
 
 ## RSP Architecture
 
@@ -153,16 +185,37 @@ The requirement of GSMA certification is that personalization packet is decoded 
 
 ## Problem
 
-The problem with RSP lies in trust, security, transparency, and automation in the process of remote SIM provisioning (RSP).
+Remote SIM Provisioning (RSP) still operates like a closed club. Every activation hinges on a brittle web of trusted
+intermediaries—device manufacturers, mobile network operators, and subscription managers—who exchange keys and X.509
+certificates behind the scenes. Users cannot independently verify what happens to their profiles, why an activation
+failed, or whether their identifiers were exposed along the way. Manual checkpoints introduce delays and human error,
+while the protocol itself leans heavily on TLS tunnels to do most of the security work. The result is a system that is
+opaque, difficult to audit, and ill-suited for a world moving toward programmable telecom services.
+
+### eSIM Problem Summary
+
+- **Trust Between Service Providers and Consumers:** Customers must blindly trust intermediaries to provision and manage
+  SIM profiles securely. Subscription Managers (SM-DP+) sit between users and carriers, creating concern around how
+  sensitive data is handled or shared.
+- **Complexity in Profile Management:** Managing multiple profiles across different providers is cumbersome and
+  centralized. Operators maintain the keys, and consumers sacrifice transparency and control.
+- **Manual Processes and Delays:** Authentication, profile switching, and settlement often require manual approval,
+  creating latency and opportunities for mistakes.
+- **Unnecessary TLS Encapsulation:** TLS tunnels shoulder critical security guarantees. If the tunnel is compromised,
+  the entire provisioning flow is exposed to passive adversaries.
+- **Privacy Gaps:** The protocol shares identifiers and metadata freely, enabling tracking and correlation of user
+  activity.
+- **No User Plane Data Integrity:** Once a profile is live, there are no guarantees that data plane traffic has not been
+  tampered with or injected en route.
 
 ### RSP Failure Summary
 
-- Trust Between Service Providers and Consumers
-- Complexity in Profile Management
-- Manual Processes and Delays
-- Unnecessary TLS Encapsulation
-- Privacy within the Protocol
-- No User Plane Data Integrity
+- Trust between service providers and consumers remains centralized and opaque.
+- Profile management and switching depend on intermediaries with little transparency.
+- Manual processes hamper automation and introduce human error.
+- The protocol’s dependence on TLS tunnels is brittle and difficult to harden.
+- Privacy protections are minimal; identifiers routinely leak across participants.
+- There is no native guarantee of user plane data integrity or authenticity.
 
 ## Open Source Remote SIM Provisioning (OpenRSP)
 
@@ -178,23 +231,45 @@ Modern Cryptography helps in securing digital information, interactions between 
 
 #### Zero Knowledge Proving System (ZKPs)
 
+- Can you prove you followed the process without revealing the underlying details?
+- Can you prove an outcome is valid without disclosing the steps that led to it?
+- Can you verify a claim without revealing anything beyond the claim itself?
+
+These questions underpin the power of modern proving systems. Within OpenRSP they manifest through:
+
 - zkCX (Zero Knowledge Certificate Exchange)
-- ZKP for EID Privacy
-- ZK SM-DP+ Authentication
-- ZK Secure TLS Communication
+- ZKP for EID privacy (or alternative primitives when lighter anonymity suffices)
+- ZK SM-DP+ authentication, potentially via secure multi-party computation with the LPA
+- ZK-secured TLS communication, keeping TLS as a privacy layer rather than a single point of failure
 
 ### Directions for advancements in privacy of RSP as a protocol
 
 #### Trust Distribution, same certificates
 - Proving X.509 certificates with ZKP
 
+The GSMA currently anchors trust by issuing root certificates, while intermediate CAs extend that trust downward. In
+OpenRSP, each entity publishes a zero-knowledge proof that its certificate remains within policy, allowing any
+participant to verify authenticity without ever seeing the certificate contents. Proofs can be cached on-chain, so
+entities reuse them for subsequent sessions without recomputing from scratch.
+
 #### More Privacy, No certificates
 - Identity-Based Non-Interactive Key Exchange (IBNIKE)
 - Multi-Party Oblivious Transfers (MPOT)
 
+Longer term, OpenRSP explores replacing certificate-heavy flows altogether. Secure identifiers derived from eUICC EIDs
+combined with user-held secrets provide strong multi-factor identity without revealing personal data. With MPOT and
+garbled circuits, multiple parties collaborate to provision profiles while remaining oblivious to each other&apos;s inputs,
+preserving privacy end-to-end.
+
 ## Introduction
 
 The rapid adoption of eSIM technology is revolutionizing telecommunications by enabling users to remotely provision and manage mobile subscriptions without physical SIM cards. OpenRSP addresses these challenges by decentralizing control, removing reliance on traditional trusted parties, and empowering users with cryptographic ownership of their profiles.
+
+In the incumbent model, authentication data flows through centralized servers that expose sensitive identifiers and
+concentrate risk. As the ecosystem scales toward billions of eSIM-enabled devices, these single points of failure become
+untenable. OpenRSP combines blockchain settlement, advanced cryptography, and secure hardware execution to distribute
+trust and enforce privacy. Consumers gain verifiable ownership of their profiles, developers plug into programmable
+connectivity rails, and operators benefit from transparent, automated settlement.
 
 OpenRSP represents a significant advancement in eSIM provisioning technology, offering a secure and privacy-preserving solution that meets the evolving needs of mobile network operators, device manufacturers, and end users.
 

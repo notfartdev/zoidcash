@@ -93,7 +93,10 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center bg-white overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden py-24 sm:py-32"
+    >
       <div className="absolute inset-0 opacity-5">
         <div
           className="h-full w-full"
@@ -116,8 +119,8 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
-        <div className="mb-20 flex justify-center">
-          <div className="relative w-96 h-96" style={{ transform: `scale(${pulseScale})` }}>
+        <div className="mb-12 sm:mb-20 flex justify-center">
+          <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96" style={{ transform: `scale(${pulseScale})` }}>
             <svg
               width="384"
               height="384"
@@ -228,22 +231,22 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mb-12">
-          <h1 className="text-8xl font-light tracking-wider mb-6 font-mono">
+        <div className="mb-10 sm:mb-12">
+          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-light tracking-wider mb-6 font-mono leading-tight">
             SEEKER<span className="font-bold">SIM</span>
             <sup className="text-2xl">™</sup>
           </h1>
-          <div className="w-40 h-px bg-black mx-auto mb-8 relative">
+          <div className="w-32 sm:w-40 h-px bg-black mx-auto mb-6 sm:mb-8 relative">
             <div className="absolute left-0 top-0 h-full bg-black animate-pulse" style={{ width: "100%" }}></div>
           </div>
-          <p className="text-2xl font-light tracking-wide text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-2xl font-light tracking-wide text-gray-600 max-w-3xl mx-auto leading-relaxed">
             GLOBAL ESIM CONNECTIVITY • PAY WITH CRYPTO
             <br />
-            <span className="font-mono text-lg">180+ COUNTRIES • ZERO ROAMING FEES • INSTANT ACTIVATION</span>
+            <span className="font-mono text-xs sm:text-lg">180+ COUNTRIES • ZERO ROAMING FEES • INSTANT ACTIVATION</span>
           </p>
         </div>
 
-        <div className="flex justify-center space-x-16 text-sm font-mono mb-12">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-mono mb-10 sm:mb-12">
           <div className="flex items-center space-x-2 group">
             <div className="w-2 h-2 bg-black rounded-full animate-pulse"></div>
             <span className="group-hover:text-gray-600 transition-colors">SOLANA POWERED</span>
@@ -262,7 +265,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-8 max-w-2xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 max-w-2xl mx-auto">
           <div className="text-center">
             <div className="text-3xl font-mono font-bold">180+</div>
             <div className="text-xs text-gray-500 font-mono">COUNTRIES</div>
