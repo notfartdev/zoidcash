@@ -171,6 +171,15 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
+            <div className="pt-2 pb-3 px-2 border-t border-gray-200 mt-2">
+              <a
+                href="/login"
+                className="block w-full px-4 py-3 bg-black text-white font-mono text-sm font-bold uppercase tracking-wide text-center hover:bg-gray-800 transition-colors rounded"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                ENTER
+              </a>
+            </div>
           </div>
         </div>
       )}
