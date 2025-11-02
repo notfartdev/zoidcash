@@ -80,6 +80,19 @@ function APIContent() {
                 </p>
               </div>
 
+              <div className="border-2 border-blue-200 bg-blue-50 p-6 hover:border-blue-400 transition-all duration-300">
+                <h3 className="font-mono font-bold text-lg mb-3">🤖 x402 AGENT SUPPORT</h3>
+                <p className="text-gray-600 text-sm">
+                  AI agents and automated clients can pay for API requests in real-time using HTTP 402 protocol. Zero fees, instant settlement, no registration required.
+                </p>
+                <div className="mt-3 flex items-center space-x-2 text-xs font-mono text-blue-600">
+                  <span>•</span>
+                  <a href="https://x402.org" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    x402.org
+                  </a>
+                </div>
+              </div>
+
               <div className="border-2 border-gray-200 p-6 hover:border-black transition-all duration-300">
                 <h3 className="font-mono font-bold text-lg mb-3">📊 USAGE ANALYTICS</h3>
                 <p className="text-gray-600 text-sm">
@@ -108,6 +121,10 @@ function APIContent() {
                   <div className="font-mono font-bold">API Key + Wallet</div>
                 </div>
                 <div>
+                  <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Payment Protocol</div>
+                  <div className="font-mono font-bold">x402 Enabled</div>
+                </div>
+                <div>
                   <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Rate Limits</div>
                   <div className="font-mono font-bold">1000 req/min</div>
                 </div>
@@ -123,6 +140,17 @@ function APIContent() {
                   <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Support</div>
                   <div className="font-mono font-bold">24/7 Developer</div>
                 </div>
+              </div>
+              <div className="mt-6 pt-6 border-t border-gray-700">
+                <a
+                  href="/api/v1/info"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-blue-400 hover:text-blue-300 hover:underline flex items-center space-x-2"
+                >
+                  <span>View API Info & x402 Support</span>
+                  <span>→</span>
+                </a>
               </div>
             </div>
           </div>
@@ -326,6 +354,48 @@ Response:
                 </pre>
               </div>
             </div>
+
+            {/* Code Example 5: x402 */}
+            <div className="border-2 border-blue-300 col-span-1 md:col-span-2">
+              <div className="bg-blue-900 text-white p-4 border-b-2 border-blue-300">
+                <div className="font-mono text-sm font-bold uppercase tracking-wide flex items-center space-x-2">
+                  <span>🤖 x402 Agent Payment</span>
+                  <a href="https://x402.org" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-400 hover:underline">
+                    Learn more →
+                  </a>
+                </div>
+              </div>
+              <div className="bg-blue-950 text-white p-6">
+                <pre className="font-mono text-xs overflow-x-auto">
+{`// AI agents can pay per request with x402
+GET /api/v1/esim/provision
+X-PAYMENT: <base64-encoded-payment-payload>
+
+// Server responds with 402 if payment missing
+HTTP/1.1 402 Payment Required
+Content-Type: application/json
+
+{
+  "x402Version": 1,
+  "accepts": [{
+    "scheme": "exact",
+    "network": "solana",
+    "maxAmountRequired": "1000000",
+    "resource": "/api/v1/esim/provision",
+    "description": "eSIM provisioning request",
+    "payTo": "0xYourAddress",
+    "asset": "USDC",
+    "mimeType": "application/json"
+  }]
+}
+
+// Client includes payment header and retries
+GET /api/v1/esim/provision
+X-PAYMENT: eyJ4NDAyVmVyc2lvbiI6MSwic2NoZW1lIjoiZXhhY3Q...
+→ HTTP 200 OK`}
+                </pre>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -333,7 +403,7 @@ Response:
         <div className="mb-20">
           <h2 className="text-4xl font-mono font-light tracking-wide mb-12 text-center">USE CASES</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 title: "TRAVEL APPS",
@@ -346,6 +416,12 @@ Response:
                 icon: "💎",
                 description: "Provide connectivity as a service in your dApp. Enable users to purchase data plans with crypto seamlessly.",
                 examples: ["Wallets", "DeFi platforms", "NFT marketplaces"],
+              },
+              {
+                title: "AI AGENTS",
+                icon: "🤖",
+                description: "Agents can use x402 protocol to pay for API requests in real-time. Perfect for autonomous systems requiring connectivity.",
+                examples: ["AI assistants", "Automated traders", "IoT controllers"],
               },
               {
                 title: "IOT DEVICES",

@@ -51,6 +51,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="format-detection" content="telephone=no" />
+        <meta name="x402:payment-protocol" content="enabled" />
+        <meta name="x402:supported-schemes" content="exact" />
+        <meta name="x402:supported-networks" content="solana,base,ethereum" />
+        <link rel="payment-protocol" href="https://x402.org" />
       </head>
       <body className="font-sans antialiased">{children}</body>
     </html>

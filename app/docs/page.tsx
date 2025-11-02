@@ -556,6 +556,11 @@ function DocsContent() {
                     description: "Zero-knowledge proofs and minimal data collection",
                     specs: ["zk-KYC", "DID support", "E2E encryption"],
                   },
+                  {
+                    title: "x402 Agent Payments",
+                    description: "AI agents can pay for API requests using HTTP 402 protocol",
+                    specs: ["Zero fees", "Instant settlement", "No registration"],
+                  },
                 ].map((feature, index) => (
                   <div key={index} className="border-2 border-gray-200 p-6 hover:border-black transition-all duration-300">
                     <h4 className="text-lg font-mono font-bold mb-3">{feature.title}</h4>

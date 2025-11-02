@@ -27,6 +27,7 @@ SeekerSIM™ is the production playground for OpenRSP: a blockchain-native eSIM 
 - **Privacy First Architecture:** zk-KYC, DID support, and encrypted delivery channels deliver trustless provisioning.
 - **SeekerOS™ AI:** Neural activity visualisation, live metrics (active users, network match, activation time, cost savings), and AI panels for network selection, privacy, and usage intelligence.
 - **Platform Infrastructure:** Layered architecture covering client apps, Seed Vault integration, Solana mainnet, edge APIs (Vercel), IPFS storage, zk-KYC identity services, and Tier-1/Tier-2 eSIM aggregators.
+- **x402 Agent Support:** AI agents and automated systems can pay for API requests in real-time using the [x402 HTTP payment protocol](https://x402.org). Zero protocol fees, instant settlement, no registration required. See [examples/x402-client-example.md](examples/x402-client-example.md) for integration guide.
 
 ### Project Resources
 
