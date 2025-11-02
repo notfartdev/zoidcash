@@ -1,8 +1,184 @@
+# SeekerSIM™ - Blockchain eSIM Connectivity Platform
+
+> **Global eSIM connectivity powered by Solana blockchain. Pay with crypto, activate instantly in 180+ countries, with zero roaming fees.**
+
+[![Live Product](https://img.shields.io/badge/Product-Live-brightgreen)](https://seekersim.xyz)
+[![GitHub](https://img.shields.io/badge/GitHub-Open%20Source-blue)](https://github.com/notfartdev/seekersim)
+[![Solana](https://img.shields.io/badge/Built%20on-Solana-purple)](https://solana.com)
+[![GSMA](https://img.shields.io/badge/GSMA-SGP.22-orange)](https://www.gsma.com)
+
+---
+
+## 🎯 Our Project Concept
+
+SeekerSIM is a blockchain-native eSIM connectivity platform that transforms global mobile connectivity from a friction point into a seamless, programmable resource. Built for the Solana Seeker phone and expanding to all eSIM-capable devices, SeekerSIM combines the best of telecom infrastructure, blockchain payments, and AI-powered optimization to deliver instant, affordable, privacy-first connectivity anywhere in the world.
+
+### 🚀 The Vision
+
+**Make global mobile connectivity as easy to access as cryptocurrency—instant, transparent, and user-controlled.**
+
+Traditional mobile connectivity is broken:
+- ❌ Expensive roaming fees ($41+ per trip)
+- ❌ Complex SIM swapping and physical stores
+- ❌ Opaque pricing and surprise charges
+- ❌ Privacy concerns (personal data required)
+- ❌ Hours or days to get connected when traveling
+
+SeekerSIM fixes this:
+- ✅ **Instant Activation:** Activate eSIM in seconds, not hours
+- ✅ **Zero Roaming Fees:** Transparent crypto payments with Solana (~1s finality, <$0.01 fees)
+- ✅ **Global Coverage:** 180+ countries, 650+ carrier networks
+- ✅ **Privacy First:** Zero-knowledge proofs, decentralized identity (DID), minimal data collection
+- ✅ **AI-Powered:** Smart network selection, auto-failover, cost optimization (up to 94% savings)
+
+### 🎯 Core Objectives
+
+1. **Make eSIM Activation Effortless for End Users**
+   - One-tap activation via QR code or in-app installation
+   - No physical SIM cards, no store visits, no language barriers
+   - AI automatically selects the best network based on location, speed, and cost
+
+2. **Improve Network Connectivity Experience**
+   - Real-time network optimization (99.8% optimal match rate)
+   - Automatic failover between networks for reliability
+   - Predictive analytics for data usage and cost savings
+
+3. **Build Developer Infrastructure**
+   - Production-ready REST API with Solana payment rails
+   - Multi-language SDKs (TypeScript, Python, JavaScript) for easy integration
+   - Smart contracts for on-chain credit management and settlements
+   - x402 payment protocol support for AI agents and autonomous systems
+
+4. **Contribute Open-Source Public Goods**
+   - Complete open-source codebase (github.com/notfartdev/seekersim)
+   - OpenRSP protocol advancing decentralized eSIM provisioning standards
+   - Free API endpoints and comprehensive documentation for developers
+
+---
+
+## ✨ Key Features
+
+### For End Users
+
+- **🌍 Global Coverage:** 180+ countries, 650+ carrier networks, automatic best-network selection
+- **⚡ Instant Activation:** Activate eSIM within seconds via QR code or in-app
+- **💰 Crypto Payments:** Pay with SOL/USDC on Solana (~1 second finality, <$0.01 fees)
+- **🔒 Privacy First:** Zero-knowledge proof KYC, decentralized identity (DID), encrypted delivery
+- **🤖 AI-Powered:** Smart network selection, usage intelligence, cost optimization (up to 94% savings)
+- **🚫 Zero Roaming Fees:** Transparent pricing, no surprise charges
+
+### For Developers
+
+- **🔌 REST API:** Production-ready API gateway (`/api/v1/*`) with authentication and error handling
+- **📦 Multi-Language SDKs:** TypeScript, Python, JavaScript with full API coverage
+- **⛓️ Smart Contracts:** Solana programs for on-chain credit management and payments
+- **🤖 x402 Support:** AI agents can pay per-request using HTTP 402 payment protocol
+- **📚 Documentation:** Complete guides, examples, and API reference
+- **🆓 Free Endpoints:** Plan listings and API info available without payment
+
+### Technical Architecture
+
+- **🔐 GSMA SGP.22 Compliant:** Industry-standard eSIM provisioning protocols
+- **⛓️ Solana Blockchain:** High-speed payment processing (~400ms, 65K TPS, <$0.001 fees)
+- **🌐 Edge Infrastructure:** Global API deployment with <50ms latency, 99.99% uptime
+- **🔒 Security Layer:** End-to-end encryption, Seed Vault integration, zero-knowledge proofs
+- **🤖 SeekerOS™ AI:** Network optimization, privacy protection, usage intelligence
+- **📊 IPFS Storage:** Decentralized storage for profiles and metadata
+
+---
+
+## 🛠️ Technology Stack
+
+- **Frontend:** Next.js 14, React 19, TypeScript, Tailwind CSS
+- **Backend:** Next.js API Routes, Vercel Edge Functions
+- **Blockchain:** Solana (smart contracts, payments, settlements)
+- **Payment Protocol:** x402 (HTTP 402 for AI agent payments)
+- **Infrastructure:** Vercel (deployment, CDN, analytics)
+- **Storage:** IPFS (decentralized profile storage)
+- **Identity:** DID, zk-KYC, zero-knowledge proofs
+
+---
+
+## 📦 Project Resources
+
+- **🌐 Live Product:** [seekersim.xyz](https://seekersim.xyz)
+- **💻 Source Code:** [github.com/notfartdev/seekersim](https://github.com/notfartdev/seekersim)
+- **📖 Documentation:** Visit `/docs` route in the deployed app
+- **🔌 API Reference:** `/api/v1/info` endpoint for API capabilities
+- **🤖 x402 Integration:** [examples/x402-client-example.md](examples/x402-client-example.md)
+- **📄 Integration Guide:** [X402_INTEGRATION.md](X402_INTEGRATION.md)
+
+---
+
+## 🎯 Use Cases
+
+### For Travelers & Digital Nomads
+- Instant connectivity when landing in a new country
+- No more hunting for local SIM cards or dealing with language barriers
+- Transparent crypto payments, no surprise roaming charges
+
+### For Developers & Builders
+- Embed connectivity into Solana dApps, travel apps, IoT platforms
+- AI agents can pay for their own connectivity via x402 protocol
+- Smart contracts enable automated connectivity provisioning
+
+### For Privacy-Conscious Users
+- Use blockchain identity (DID) instead of sharing personal data
+- Zero-knowledge proof KYC when compliance is required
+- Encrypted, privacy-preserving connectivity
+
+---
+
+## 🚀 Getting Started
+
+### For End Users
+
+1. Visit [seekersim.xyz](https://seekersim.xyz)
+2. Select a destination country and data plan
+3. Pay with SOL/USDC from your Solana wallet
+4. Receive QR code or in-app activation link
+5. Activate eSIM in seconds—you're connected!
+
+### For Developers
+
+1. Check out the [API documentation](https://seekersim.xyz/api/v1/info)
+2. Review [x402 integration examples](examples/x402-client-example.md)
+3. Explore the [open-source codebase](https://github.com/notfartdev/seekersim)
+4. Join the waitlist at `/api-access` for early API access
+
+---
+
+## 🤝 Contributing
+
+SeekerSIM is open-source and welcomes contributions! The project is built on the OpenRSP protocol (see below) and aims to democratize global connectivity.
+
+- **Issues:** Report bugs or suggest features via GitHub Issues
+- **Pull Requests:** Contributions are welcome following standard PR process
+- **Documentation:** Help improve docs, examples, and guides
+- **Community:** Join discussions and share feedback
+
+---
+
+## 📄 License
+
+This project is open-source. See repository for license details.
+
+---
+
+## 🔗 Learn More
+
+- **OpenRSP Protocol:** See the technical deep-dive below
+- **x402 Payment Protocol:** [x402.org](https://x402.org)
+- **Solana Documentation:** [docs.solana.com](https://docs.solana.com)
+- **GSMA eSIM Standards:** [gsma.com](https://www.gsma.com)
+
+---
+
 # OpenRSP (Open Source Remote SIM Provisioning)
 
 > ##### *Democratizing Consumer Telco Connectivity*
 
-**Abstract** , Emerging eSIM technology is transforming telecommunications by enabling users to obtain mobile subscriptions over-the-air (OTA) through remote SIM profile provisioning. Unlike traditional SIM cards, eSIMs are embedded directly into devices via an Embedded Universal Integrated Circuit Card (eUICC), eliminating the need for physical stores and reducing the risk of SIM swap attacks. This shift democratizes consumer telecom infrastructure, enhances user experience, and lays the groundwork for a more secure, flexible mobile ecosystem.
+**Abstract:** Emerging eSIM technology is transforming telecommunications by enabling users to obtain mobile subscriptions over-the-air (OTA) through remote SIM profile provisioning. Unlike traditional SIM cards, eSIMs are embedded directly into devices via an Embedded Universal Integrated Circuit Card (eUICC), eliminating the need for physical stores and reducing the risk of SIM swap attacks. This shift democratizes consumer telecom infrastructure, enhances user experience, and lays the groundwork for a more secure, flexible mobile ecosystem.
 
 At the heart of this ecosystem lies Remote SIM Provisioning (RSP), the software protocol that manages eSIM life-cycle and securely delivers eSIM profiles to secure hardware(user device., embedded UICC chip) through multiple interacting components. When a user selects a subscription plan, the Local Profile Assistant (LPA) on the device sends an intent to the Subscription Manager Data Preparation (SM-DP+) server, which generates and certifies the profile using Public Key Infrastructure (PKI) and X.509 certificates issued by GSMA-compliant entities. The profile is then authenticated and installed on the eUICC, allowing seamless access to cellular services.
 
@@ -12,7 +188,7 @@ We present OpenRSP, a decentralized protocol addressing the current RSP vulnerab
 
 ## SeekerSIM Platform Overview
 
-SeekerSIM™ is the production playground for OpenRSP: a blockchain-native eSIM connectivity platform built for the Solana Seeker phone and any eSIM-capable device. The product experience showcased at [seekersim.vercel.app](https://seekersim.vercel.app) demonstrates how global connectivity, crypto payments, and privacy-first identity converge into a single instant activation flow. The public repository is available at [notfartdev/seekersim](https://github.com/notfartdev/seekersim), which contains the Next.js 14 application, Tailwind design system, and animated data/AI visualisations used throughout the marketing site and docs.
+SeekerSIM™ is the production playground for OpenRSP: a blockchain-native eSIM connectivity platform built for the Solana Seeker phone and any eSIM-capable device. The product experience showcased at [seekersim.xyz](https://seekersim.xyz) demonstrates how global connectivity, crypto payments, and privacy-first identity converge into a single instant activation flow. The public repository is available at [notfartdev/seekersim](https://github.com/notfartdev/seekersim), which contains the Next.js 14 application, Tailwind design system, and animated data/AI visualisations used throughout the marketing site and docs.
 
 ### Product Concept
 
@@ -31,7 +207,7 @@ SeekerSIM™ is the production playground for OpenRSP: a blockchain-native eSIM 
 
 ### Project Resources
 
-- **Live product:** [seekersim.vercel.app](https://seekersim.vercel.app)
+- **Live product:** [seekersim.xyz](https://seekersim.xyz)
 - **Source code:** [github.com/notfartdev/seekersim](https://github.com/notfartdev/seekersim)
 - **Documentation:** `/docs` route in the deployed app for market thesis, architecture deep dives, and developer onboarding.
 
@@ -112,7 +288,7 @@ Unlike traditional SIM cards, eSIMs can be integrated into a System-on-Chip (SoC
 4. **Connectivity Domains**
    - **Over-The-Air (OTA) Domain**
      - Includes mobile network infrastructure used for profile activation and connectivity.
-     - Uses secure protocols (e.g., GSMA’s RSP standard) to communicate between the SM-SR and eUICC.
+     - Uses secure protocols (e.g., GSMA's RSP standard) to communicate between the SM-SR and eUICC.
      - Enables the secure provisioning of new keys, certificates, or updates to the eSIM.
    - **Communication Network Domain**
      - Includes mobile network infrastructure used for profile activation and connectivity.
@@ -214,7 +390,7 @@ opaque, difficult to audit, and ill-suited for a world moving toward programmabl
 - Trust between service providers and consumers remains centralized and opaque.
 - Profile management and switching depend on intermediaries with little transparency.
 - Manual processes hamper automation and introduce human error.
-- The protocol’s dependence on TLS tunnels is brittle and difficult to harden.
+- The protocol's dependence on TLS tunnels is brittle and difficult to harden.
 - Privacy protections are minimal; identifiers routinely leak across participants.
 - There is no native guarantee of user plane data integrity or authenticity.
 
@@ -259,7 +435,7 @@ entities reuse them for subsequent sessions without recomputing from scratch.
 
 Longer term, OpenRSP explores replacing certificate-heavy flows altogether. Secure identifiers derived from eUICC EIDs
 combined with user-held secrets provide strong multi-factor identity without revealing personal data. With MPOT and
-garbled circuits, multiple parties collaborate to provision profiles while remaining oblivious to each other&apos;s inputs,
+garbled circuits, multiple parties collaborate to provision profiles while remaining oblivious to each other's inputs,
 preserving privacy end-to-end.
 
 ## Introduction
@@ -277,4 +453,3 @@ OpenRSP represents a significant advancement in eSIM provisioning technology, of
 ---
 
 We will be providing a detailed analysis of the theory, implementation, challenges and potential benefits of incorporating these advanced cryptographic techniques into eSIM technology. Our result will demonstrate that the proposed framework not only significantly improves the security and privacy of the RSP process but also lays the foundation for a more trustworthy and collaborative environment in the digital communication domain.
-
