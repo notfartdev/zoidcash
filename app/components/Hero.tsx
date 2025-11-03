@@ -244,15 +244,15 @@ export default function Hero() {
             <br />
             <span className="font-mono text-xs sm:text-lg">180+ COUNTRIES • ZERO ROAMING FEES • INSTANT ACTIVATION</span>
             <br />
-            <span className="font-mono text-xs sm:text-lg">
+            <span className="font-mono text-xs sm:text-lg flex flex-wrap justify-center items-center gap-x-2">
               POWERED BY: <span className="font-bold">$SEEKER</span> • CONTRACT ADDRESS:{" "}
               <a 
-                href="https://solscan.io/" 
+                href="https://solscan.io/token/BkWjb5NBDYaUCK29bU7ujcXifJFWPvxS5qijkhJDpump" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                className="text-blue-600 hover:text-blue-800 hover:underline transition-colors break-all"
               >
-                0x...
+                BkWjb5NBDYaUCK29bU7ujcXifJFWPvxS5qijkhJDpump
               </a>
             </span>
           </p>
