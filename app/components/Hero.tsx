@@ -243,6 +243,18 @@ export default function Hero() {
             GLOBAL ESIM CONNECTIVITY • PAY WITH CRYPTO
             <br />
             <span className="font-mono text-xs sm:text-lg">180+ COUNTRIES • ZERO ROAMING FEES • INSTANT ACTIVATION</span>
+            <br />
+            <span className="font-mono text-xs sm:text-lg">
+              POWERED BY: <span className="font-bold">$SEEKER</span> • CONTRACT ADDRESS:{" "}
+              <a 
+                href="https://solscan.io/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+              >
+                0x...
+              </a>
+            </span>
           </p>
         </div>
 
