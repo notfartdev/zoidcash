@@ -4,10 +4,12 @@ import { Suspense, useState } from "react"
 import LoadingSpinner from "../components/LoadingSpinner"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
+import FluidBackground from "../components/FluidBackground"
 
 export default function APIPage() {
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="min-h-screen bg-[#0a0a0a] text-[#e5e5e5] relative">
+      <FluidBackground />
       <Navigation />
       <Suspense fallback={<LoadingSpinner />}>
         <APIContent />
@@ -25,7 +27,6 @@ function APIContent() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement actual waitlist submission
     console.log({ email, company, useCase })
     setSubmitted(true)
     setTimeout(() => {
@@ -37,145 +38,132 @@ function APIContent() {
   }
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24 pb-20 relative z-10">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="mb-16 text-center">
-          <h1 className="text-6xl font-light tracking-wider mb-6 font-mono">
-            API <span className="font-bold">ACCESS</span>
+          <h1 className="text-6xl font-light tracking-wider mb-6 font-mono text-white">
+            MOON<span className="font-bold">WARE</span> API
           </h1>
-          <div className="w-32 h-px bg-black mx-auto mb-8"></div>
-          <p className="text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            Developer API for Global eSIM Provisioning
+          <div className="w-32 h-px bg-white mx-auto mb-8"></div>
+          <p className="text-2xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
+            Privacy API for Solana - Stealth Transactions, Encrypted Messaging, and Private DeFi
           </p>
-          <div className="mt-6 inline-flex items-center space-x-3 px-6 py-3 bg-yellow-50 border-2 border-yellow-400">
-            <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
-            <span className="font-mono font-bold text-sm uppercase tracking-wide">Coming Soon • Join Waitlist</span>
+          <div className="mt-6 inline-flex items-center space-x-3 px-6 py-3 bg-[#1a1a1a] border-2 border-white/30">
+            <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+            <span className="font-mono font-bold text-sm uppercase tracking-wide text-white">Coming Soon • Join Waitlist</span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Left: API Info */}
           <div>
-            <h2 className="text-3xl font-mono font-bold mb-8 tracking-wide">SEEKERSIM API</h2>
+            <h2 className="text-3xl font-mono font-bold mb-8 tracking-wide text-white">MOONWARE OS API</h2>
             
-            <p className="text-gray-700 leading-relaxed mb-8 text-lg">
-              Build global connectivity into your applications with our powerful API. Programmatically provision eSIM
-              profiles, manage data plans, and handle payments with cryptocurrency.
+            <p className="text-gray-300 leading-relaxed mb-8 text-lg">
+              Build privacy into your Solana applications with our powerful API. Programmatically create stealth transactions, 
+              send encrypted messages, and enable private DeFi operations.
             </p>
 
             {/* Features */}
             <div className="space-y-6 mb-12">
-              <div className="border-2 border-gray-200 p-6 hover:border-black transition-all duration-300">
-                <h3 className="font-mono font-bold text-lg mb-3">⚡ INSTANT PROVISIONING</h3>
-                <p className="text-gray-600 text-sm">
-                  RESTful API for instant eSIM activation across 180+ countries with real-time status updates
+              <div className="border-2 border-white/20 bg-[#1a1a1a] p-6 hover:border-white/40 transition-all duration-300">
+                <h3 className="font-mono font-bold text-lg mb-3 text-white">🔒 STEALTH TRANSACTIONS</h3>
+                <p className="text-gray-300 text-sm">
+                  API for creating stealth transactions with one-time addresses. Route through ShadowNet relays for complete anonymity.
                 </p>
               </div>
 
-              <div className="border-2 border-gray-200 p-6 hover:border-black transition-all duration-300">
-                <h3 className="font-mono font-bold text-lg mb-3">🔐 CRYPTO PAYMENTS</h3>
-                <p className="text-gray-600 text-sm">
-                  Accept SOL/USDC payments via smart contracts with automatic settlement and transparent pricing
+              <div className="border-2 border-white/20 bg-[#1a1a1a] p-6 hover:border-white/40 transition-all duration-300">
+                <h3 className="font-mono font-bold text-lg mb-3 text-white">💬 ENCRYPTED MESSAGING</h3>
+                <p className="text-gray-300 text-sm">
+                  End-to-end encrypted messaging with HPKE. Metadata-free communications with Darkrelay messaging layer.
                 </p>
               </div>
 
-              <div className="border-2 border-blue-200 bg-blue-50 p-6 hover:border-blue-400 transition-all duration-300">
-                <h3 className="font-mono font-bold text-lg mb-3">🤖 x402 AGENT SUPPORT</h3>
-                <p className="text-gray-600 text-sm">
-                  AI agents and automated clients can pay for API requests in real-time using HTTP 402 protocol. Zero fees, instant settlement, no registration required.
-                </p>
-                <div className="mt-3 flex items-center space-x-2 text-xs font-mono text-blue-600">
-                  <span>•</span>
-                  <a href="https://x402.org" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                    x402.org
-                  </a>
-                </div>
-              </div>
-
-              <div className="border-2 border-gray-200 p-6 hover:border-black transition-all duration-300">
-                <h3 className="font-mono font-bold text-lg mb-3">📊 USAGE ANALYTICS</h3>
-                <p className="text-gray-600 text-sm">
-                  Real-time data consumption tracking, balance monitoring, and usage reporting via webhooks
+              <div className="border-2 border-white/30 bg-[#1a1a1a] p-6 hover:border-white/50 transition-all duration-300">
+                <h3 className="font-mono font-bold text-lg mb-3 text-white">💳 PRIVATE PAYMENTS</h3>
+                <p className="text-gray-300 text-sm">
+                  Generate private pay links with MoonPay. Stealth addresses enable unlinkable transactions. Receiver stays invisible.
                 </p>
               </div>
 
-              <div className="border-2 border-gray-200 p-6 hover:border-black transition-all duration-300">
-                <h3 className="font-mono font-bold text-lg mb-3">🌐 GLOBAL COVERAGE</h3>
-                <p className="text-gray-600 text-sm">
-                  Access 650+ carrier networks worldwide with automatic best-network selection and failover
+              <div className="border-2 border-white/20 bg-[#1a1a1a] p-6 hover:border-white/40 transition-all duration-300">
+                <h3 className="font-mono font-bold text-lg mb-3 text-white">🔄 PRIVATE DEFI</h3>
+                <p className="text-gray-300 text-sm">
+                  Execute private swaps with MoonRoute. Multi-party computation and zero-knowledge proofs for complete anonymity.
+                </p>
+              </div>
+
+              <div className="border-2 border-white/20 bg-[#1a1a1a] p-6 hover:border-white/40 transition-all duration-300">
+                <h3 className="font-mono font-bold text-lg mb-3 text-white">🛡️ IDENTITY PROTECTION</h3>
+                <p className="text-gray-300 text-sm">
+                  MoonMask API for ephemeral identities. Rotating Moon IDs prevent linkability across all interactions.
                 </p>
               </div>
             </div>
 
             {/* API Specs */}
-            <div className="bg-gray-900 text-white p-8">
-              <h3 className="font-mono font-bold text-xl mb-6">API SPECIFICATIONS</h3>
+            <div className="bg-[#0a0a0a] border-2 border-white/20 text-white p-8">
+              <h3 className="font-mono font-bold text-xl mb-6 text-white">API SPECIFICATIONS</h3>
               <div className="grid grid-cols-2 gap-6 text-sm">
                 <div>
                   <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Protocol</div>
-                  <div className="font-mono font-bold">REST / GraphQL</div>
+                  <div className="font-mono font-bold text-white">REST / GraphQL</div>
                 </div>
                 <div>
                   <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Authentication</div>
-                  <div className="font-mono font-bold">API Key + Wallet</div>
+                  <div className="font-mono font-bold text-white">API Key + Wallet</div>
                 </div>
                 <div>
-                  <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Payment Protocol</div>
-                  <div className="font-mono font-bold">x402 Enabled</div>
+                  <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Privacy Level</div>
+                  <div className="font-mono font-bold text-white">100% Metadata Free</div>
                 </div>
                 <div>
                   <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Rate Limits</div>
-                  <div className="font-mono font-bold">1000 req/min</div>
+                  <div className="font-mono font-bold text-white">1000 req/min</div>
                 </div>
                 <div>
                   <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Response Time</div>
-                  <div className="font-mono font-bold">{"<"} 100ms</div>
+                  <div className="font-mono font-bold text-white">{"<"} 50ms</div>
                 </div>
                 <div>
                   <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Uptime SLA</div>
-                  <div className="font-mono font-bold">99.99%</div>
+                  <div className="font-mono font-bold text-white">99.99%</div>
+                </div>
+                <div>
+                  <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Network</div>
+                  <div className="font-mono font-bold text-white">Solana Mainnet</div>
                 </div>
                 <div>
                   <div className="text-gray-400 font-mono mb-1 uppercase text-xs">Support</div>
-                  <div className="font-mono font-bold">24/7 Developer</div>
+                  <div className="font-mono font-bold text-white">24/7 Developer</div>
                 </div>
-              </div>
-              <div className="mt-6 pt-6 border-t border-gray-700">
-                <a
-                  href="/api/v1/info"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-mono text-blue-400 hover:text-blue-300 hover:underline flex items-center space-x-2"
-                >
-                  <span>View API Info & x402 Support</span>
-                  <span>→</span>
-                </a>
               </div>
             </div>
           </div>
 
           {/* Right: Waitlist Form */}
           <div>
-            <div className="border-2 border-black p-8 sticky top-24">
-              <h3 className="text-2xl font-mono font-bold mb-6 tracking-wide">JOIN API WAITLIST</h3>
+            <div className="border-2 border-white/20 bg-[#1a1a1a] p-8 sticky top-24">
+              <h3 className="text-2xl font-mono font-bold mb-6 tracking-wide text-white">JOIN API WAITLIST</h3>
               
               {submitted ? (
                 <div className="py-12 text-center">
-                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h4 className="font-mono font-bold text-xl mb-3">YOU'RE ON THE LIST!</h4>
-                  <p className="text-gray-600 font-mono text-sm">
+                  <h4 className="font-mono font-bold text-xl mb-3 text-white">YOU'RE ON THE LIST!</h4>
+                  <p className="text-gray-400 font-mono text-sm">
                     We'll notify you when API access is available
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-mono font-bold mb-2 uppercase tracking-wide">
+                    <label className="block text-sm font-mono font-bold mb-2 uppercase tracking-wide text-gray-300">
                       Email Address *
                     </label>
                     <input
@@ -183,26 +171,26 @@ function APIContent() {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full border-2 border-gray-300 p-3 font-mono text-sm focus:border-black focus:outline-none transition-colors"
+                      className="w-full border-2 border-white/20 bg-[#0a0a0a] text-white p-3 font-mono text-sm focus:border-white focus:outline-none transition-colors"
                       placeholder="developer@company.com"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-mono font-bold mb-2 uppercase tracking-wide">
+                    <label className="block text-sm font-mono font-bold mb-2 uppercase tracking-wide text-gray-300">
                       Company / Project
                     </label>
                     <input
                       type="text"
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
-                      className="w-full border-2 border-gray-300 p-3 font-mono text-sm focus:border-black focus:outline-none transition-colors"
+                      className="w-full border-2 border-white/20 bg-[#0a0a0a] text-white p-3 font-mono text-sm focus:border-white focus:outline-none transition-colors"
                       placeholder="Your company or dApp name"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-mono font-bold mb-2 uppercase tracking-wide">
+                    <label className="block text-sm font-mono font-bold mb-2 uppercase tracking-wide text-gray-300">
                       Use Case *
                     </label>
                     <textarea
@@ -210,14 +198,14 @@ function APIContent() {
                       value={useCase}
                       onChange={(e) => setUseCase(e.target.value)}
                       rows={4}
-                      className="w-full border-2 border-gray-300 p-3 font-mono text-sm focus:border-black focus:outline-none transition-colors resize-none"
-                      placeholder="Describe how you plan to use the SeekerSIM API..."
+                      className="w-full border-2 border-white/20 bg-[#0a0a0a] text-white p-3 font-mono text-sm focus:border-white focus:outline-none transition-colors resize-none"
+                      placeholder="Describe how you plan to use the Moonware OS API..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-black text-white py-4 font-mono font-bold text-sm uppercase tracking-wide hover:bg-gray-800 transition-colors"
+                    className="w-full bg-white text-black py-4 font-mono font-bold text-sm uppercase tracking-wide hover:bg-gray-200 transition-colors"
                   >
                     Join Waitlist
                   </button>
@@ -229,23 +217,23 @@ function APIContent() {
               )}
 
               {/* Benefits */}
-              <div className="mt-8 pt-8 border-t-2 border-gray-200">
-                <h4 className="font-mono font-bold text-sm mb-4 uppercase tracking-wide">Early Access Benefits:</h4>
-                <ul className="space-y-2 text-sm text-gray-600">
+              <div className="mt-8 pt-8 border-t-2 border-white/20">
+                <h4 className="font-mono font-bold text-sm mb-4 uppercase tracking-wide text-white">Early Access Benefits:</h4>
+                <ul className="space-y-2 text-sm text-gray-300">
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                     <span className="font-mono">Free API credits ($500 value)</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                     <span className="font-mono">Priority support channel</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                     <span className="font-mono">Beta feature access</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                     <span className="font-mono">Discounted pricing tier</span>
                   </li>
                 </ul>
@@ -256,143 +244,111 @@ function APIContent() {
 
         {/* API Preview */}
         <div className="mb-20">
-          <h2 className="text-4xl font-mono font-light tracking-wide mb-12 text-center">API PREVIEW</h2>
+          <h2 className="text-4xl font-mono font-light tracking-wide mb-12 text-center text-white">API PREVIEW</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Code Example 1 */}
-            <div className="border-2 border-gray-200">
-              <div className="bg-gray-900 text-white p-4 border-b-2 border-gray-200">
-                <div className="font-mono text-sm font-bold uppercase tracking-wide">Provision eSIM</div>
+            {/* Code Example 1: Private Payment */}
+            <div className="border-2 border-white/20 bg-[#1a1a1a]">
+              <div className="bg-[#0a0a0a] text-white p-4 border-b-2 border-white/20">
+                <div className="font-mono text-sm font-bold uppercase tracking-wide">Create Private Payment</div>
               </div>
-              <div className="bg-gray-900 text-white p-6">
-                <pre className="font-mono text-xs overflow-x-auto">
-{`POST /api/v1/esim/provision
+              <div className="bg-[#0a0a0a] text-white p-6">
+                <pre className="font-mono text-xs overflow-x-auto text-gray-300">
+{`POST /api/v1/moonpay/create
 
 {
-  "country": "FR",
-  "dataAmount": "1GB",
-  "duration": "7days",
-  "wallet": "ABC...xyz"
+  "amount": "10 USDC",
+  "token": "USDC",
+  "stealth": true
 }
 
 Response:
 {
   "success": true,
-  "qrCode": "LPA:1$...",
-  "activationCode": "ABC123",
-  "expiresAt": "2025-01-15"
+  "payLink": "moonware.os/pay/...",
+  "stealthAddress": "hidden",
+  "qrCode": "..."
 }`}
                 </pre>
               </div>
             </div>
 
-            {/* Code Example 2 */}
-            <div className="border-2 border-gray-200">
-              <div className="bg-gray-900 text-white p-4 border-b-2 border-gray-200">
-                <div className="font-mono text-sm font-bold uppercase tracking-wide">Check Balance</div>
+            {/* Code Example 2: Stealth Transaction */}
+            <div className="border-2 border-white/20 bg-[#1a1a1a]">
+              <div className="bg-[#0a0a0a] text-white p-4 border-b-2 border-white/20">
+                <div className="font-mono text-sm font-bold uppercase tracking-wide">Send Stealth Transaction</div>
               </div>
-              <div className="bg-gray-900 text-white p-6">
-                <pre className="font-mono text-xs overflow-x-auto">
-{`GET /api/v1/balance/:wallet
-
-Response:
-{
-  "wallet": "ABC...xyz",
-  "balance": {
-    "sol": "1.25",
-    "usdc": "50.00",
-    "credits": "2.5GB"
-  },
-  "activePlans": 2
-}`}
-                </pre>
-              </div>
-            </div>
-
-            {/* Code Example 3 */}
-            <div className="border-2 border-gray-200">
-              <div className="bg-gray-900 text-white p-4 border-b-2 border-gray-200">
-                <div className="font-mono text-sm font-bold uppercase tracking-wide">List Available Plans</div>
-              </div>
-              <div className="bg-gray-900 text-white p-6">
-                <pre className="font-mono text-xs overflow-x-auto">
-{`GET /api/v1/plans?country=FR
-
-Response:
-{
-  "plans": [
-    {
-      "id": "fr-1gb-7d",
-      "name": "France 1GB",
-      "data": "1GB",
-      "duration": "7 days",
-      "price": "5.00 USDC"
-    }
-  ]
-}`}
-                </pre>
-              </div>
-            </div>
-
-            {/* Code Example 4 */}
-            <div className="border-2 border-gray-200">
-              <div className="bg-gray-900 text-white p-4 border-b-2 border-gray-200">
-                <div className="font-mono text-sm font-bold uppercase tracking-wide">Usage Tracking</div>
-              </div>
-              <div className="bg-gray-900 text-white p-6">
-                <pre className="font-mono text-xs overflow-x-auto">
-{`GET /api/v1/usage/:iccid
-
-Response:
-{
-  "iccid": "8901...",
-  "used": "450MB",
-  "remaining": "550MB",
-  "status": "active",
-  "expiresAt": "2025-01-15"
-}`}
-                </pre>
-              </div>
-            </div>
-
-            {/* Code Example 5: x402 */}
-            <div className="border-2 border-blue-300 col-span-1 md:col-span-2">
-              <div className="bg-blue-900 text-white p-4 border-b-2 border-blue-300">
-                <div className="font-mono text-sm font-bold uppercase tracking-wide flex items-center space-x-2">
-                  <span>🤖 x402 Agent Payment</span>
-                  <a href="https://x402.org" target="_blank" rel="noopener noreferrer" className="text-xs text-blue-400 hover:underline">
-                    Learn more →
-                  </a>
-                </div>
-              </div>
-              <div className="bg-blue-950 text-white p-6">
-                <pre className="font-mono text-xs overflow-x-auto">
-{`// AI agents can pay per request with x402
-GET /api/v1/esim/provision
-X-PAYMENT: <base64-encoded-payment-payload>
-
-// Server responds with 402 if payment missing
-HTTP/1.1 402 Payment Required
-Content-Type: application/json
+              <div className="bg-[#0a0a0a] text-white p-6">
+                <pre className="font-mono text-xs overflow-x-auto text-gray-300">
+{`POST /api/v1/shadow/send
 
 {
-  "x402Version": 1,
-  "accepts": [{
-    "scheme": "exact",
-    "network": "solana",
-    "maxAmountRequired": "1000000",
-    "resource": "/api/v1/esim/provision",
-    "description": "eSIM provisioning request",
-    "payTo": "0xYourAddress",
-    "asset": "USDC",
-    "mimeType": "application/json"
-  }]
+  "to": "recipientAddress",
+  "amount": "1 SOL",
+  "stealth": true,
+  "relays": "auto"
 }
 
-// Client includes payment header and retries
-GET /api/v1/esim/provision
-X-PAYMENT: eyJ4NDAyVmVyc2lvbiI6MSwic2NoZW1lIjoiZXhhY3Q...
-→ HTTP 200 OK`}
+Response:
+{
+  "success": true,
+  "txHash": "hidden",
+  "relayPath": "encrypted",
+  "metadata": "zero"
+}`}
+                </pre>
+              </div>
+            </div>
+
+            {/* Code Example 3: Encrypted Message */}
+            <div className="border-2 border-white/20 bg-[#1a1a1a]">
+              <div className="bg-[#0a0a0a] text-white p-4 border-b-2 border-white/20">
+                <div className="font-mono text-sm font-bold uppercase tracking-wide">Send Encrypted Message</div>
+              </div>
+              <div className="bg-[#0a0a0a] text-white p-6">
+                <pre className="font-mono text-xs overflow-x-auto text-gray-300">
+{`POST /api/v1/darkrelay/send
+
+{
+  "to": "moonID_...",
+  "message": "encrypted_data",
+  "hpke": true
+}
+
+Response:
+{
+  "success": true,
+  "messageId": "...",
+  "commitment": "on-chain",
+  "metadata": "zero"
+}`}
+                </pre>
+              </div>
+            </div>
+
+            {/* Code Example 4: Private Swap */}
+            <div className="border-2 border-white/20 bg-[#1a1a1a]">
+              <div className="bg-[#0a0a0a] text-white p-4 border-b-2 border-white/20">
+                <div className="font-mono text-sm font-bold uppercase tracking-wide">Execute Private Swap</div>
+              </div>
+              <div className="bg-[#0a0a0a] text-white p-6">
+                <pre className="font-mono text-xs overflow-x-auto text-gray-300">
+{`POST /api/v1/moonroute/swap
+
+{
+  "from": "USDC",
+  "to": "SOL",
+  "amount": "100",
+  "stealth": true
+}
+
+Response:
+{
+  "success": true,
+  "swapId": "...",
+  "oneTimeAddress": "hidden",
+  "route": "encrypted"
+}`}
                 </pre>
               </div>
             </div>
@@ -401,42 +357,42 @@ X-PAYMENT: eyJ4NDAyVmVyc2lvbiI6MSwic2NoZW1lIjoiZXhhY3Q...
 
         {/* Use Cases */}
         <div className="mb-20">
-          <h2 className="text-4xl font-mono font-light tracking-wide mb-12 text-center">USE CASES</h2>
+          <h2 className="text-4xl font-mono font-light tracking-wide mb-12 text-center text-white">USE CASES</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: "TRAVEL APPS",
-                icon: "✈️",
-                description: "Embed instant connectivity for travelers. Offer eSIM data plans directly in your travel booking or itinerary app.",
-                examples: ["City guides", "Travel planners", "Booking platforms"],
-              },
-              {
-                title: "WEB3 DAPPS",
+                title: "PRIVATE WALLETS",
                 icon: "💎",
-                description: "Provide connectivity as a service in your dApp. Enable users to purchase data plans with crypto seamlessly.",
-                examples: ["Wallets", "DeFi platforms", "NFT marketplaces"],
+                description: "Integrate stealth transactions into wallet applications. Users can send and receive funds anonymously.",
+                examples: ["Solana wallets", "Multi-chain wallets", "Privacy wallets"],
               },
               {
-                title: "AI AGENTS",
-                icon: "🤖",
-                description: "Agents can use x402 protocol to pay for API requests in real-time. Perfect for autonomous systems requiring connectivity.",
-                examples: ["AI assistants", "Automated traders", "IoT controllers"],
+                title: "DEFI PLATFORMS",
+                icon: "🔄",
+                description: "Enable private swaps and DeFi operations. Protect user trading strategies from front-running.",
+                examples: ["DEX aggregators", "Yield farms", "Lending platforms"],
               },
               {
-                title: "IOT DEVICES",
-                icon: "📡",
-                description: "Connect IoT devices globally with programmable eSIM. Pay-per-use billing with micro-transactions on Solana.",
-                examples: ["Trackers", "Sensors", "Smart devices"],
+                title: "MESSAGING APPS",
+                icon: "💬",
+                description: "Build encrypted messaging on Solana. Metadata-free communications with Darkrelay integration.",
+                examples: ["Chat apps", "DAO communication", "Private forums"],
+              },
+              {
+                title: "PRIVACY TOOLS",
+                icon: "🛡️",
+                description: "Create privacy-preserving applications. Identity protection and unlinkable interactions.",
+                examples: ["Voting systems", "Reputation systems", "Anonymous apps"],
               },
             ].map((useCase, index) => (
-              <div key={index} className="border-2 border-gray-200 p-8 hover:border-black transition-all duration-300 group">
+              <div key={index} className="border-2 border-white/20 bg-[#1a1a1a] p-8 hover:border-white/40 transition-all duration-300 group">
                 <div className="text-4xl mb-4">{useCase.icon}</div>
-                <h3 className="text-xl font-mono font-bold mb-4 tracking-wide">{useCase.title}</h3>
-                <p className="text-gray-700 mb-6 leading-relaxed">{useCase.description}</p>
+                <h3 className="text-xl font-mono font-bold mb-4 tracking-wide text-white">{useCase.title}</h3>
+                <p className="text-gray-300 mb-6 leading-relaxed text-sm">{useCase.description}</p>
                 <div className="space-y-2">
                   {useCase.examples.map((example, i) => (
-                    <div key={i} className="text-xs font-mono text-gray-500">
+                    <div key={i} className="text-xs font-mono text-gray-400">
                       • {example}
                     </div>
                   ))}
@@ -447,17 +403,17 @@ X-PAYMENT: eyJ4NDAyVmVyc2lvbiI6MSwic2NoZW1lIjoiZXhhY3Q...
         </div>
 
         {/* SDK Languages */}
-        <div className="mb-20 bg-gray-50 border-2 border-gray-200 p-12">
-          <h2 className="text-3xl font-mono font-bold mb-8 text-center tracking-wide">PLANNED SDK SUPPORT</h2>
+        <div className="mb-20 bg-[#1a1a1a] border-2 border-white/20 p-12">
+          <h2 className="text-3xl font-mono font-bold mb-8 text-center tracking-wide text-white">PLANNED SDK SUPPORT</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {["JavaScript", "TypeScript", "Python", "Rust", "Go", "Java", "Swift", "Kotlin"].map((lang, index) => (
               <div
                 key={index}
-                className="border-2 border-gray-300 bg-white p-6 text-center hover:border-black transition-all duration-300 cursor-pointer"
+                className="border-2 border-white/20 bg-[#0a0a0a] p-6 text-center hover:border-white/40 transition-all duration-300 cursor-pointer"
               >
-                <div className="font-mono font-bold text-lg">{lang}</div>
-                <div className="text-xs text-gray-500 font-mono mt-2">SDK</div>
+                <div className="font-mono font-bold text-lg text-white">{lang}</div>
+                <div className="text-xs text-gray-400 font-mono mt-2">SDK</div>
               </div>
             ))}
           </div>
@@ -467,4 +423,3 @@ X-PAYMENT: eyJ4NDAyVmVyc2lvbiI6MSwic2NoZW1lIjoiZXhhY3Q...
     </div>
   )
 }
-

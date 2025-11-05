@@ -95,15 +95,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden py-24 sm:py-32"
+      className="relative min-h-screen flex items-center justify-center bg-[#0a0a0a] overflow-hidden py-24 sm:py-32 z-10"
     >
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-10">
         <div
           className="h-full w-full"
           style={{
             backgroundImage: `
-            linear-gradient(to right, #000 1px, transparent 1px),
-            linear-gradient(to bottom, #000 1px, transparent 1px)
+            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
           `,
             backgroundSize: "60px 60px",
           }}
@@ -111,11 +111,11 @@ export default function Hero() {
       </div>
 
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-20 w-4 h-4 border border-black opacity-20 rotate-45 animate-pulse"></div>
-        <div className="absolute bottom-32 right-32 w-6 h-6 border border-black opacity-15 animate-bounce"></div>
-        <div className="absolute top-1/3 right-20 w-2 h-2 bg-black opacity-30 animate-ping"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-12 h-1 bg-black opacity-10 rotate-12"></div>
-        <div className="absolute top-1/2 left-10 w-8 h-8 border border-black opacity-10 rotate-45"></div>
+        <div className="absolute top-20 left-20 w-4 h-4 border border-white opacity-20 rotate-45 animate-pulse"></div>
+        <div className="absolute bottom-32 right-32 w-6 h-6 border border-white opacity-15 animate-bounce"></div>
+        <div className="absolute top-1/3 right-20 w-2 h-2 bg-white opacity-30 animate-ping"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-12 h-1 bg-white opacity-10 rotate-12"></div>
+        <div className="absolute top-1/2 left-10 w-8 h-8 border border-white opacity-10 rotate-45"></div>
       </div>
 
       <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
@@ -136,22 +136,6 @@ export default function Hero() {
                     <feMergeNode in="SourceGraphic" />
                   </feMerge>
                 </filter>
-                <pattern id="worldMap" patternUnits="userSpaceOnUse" width="384" height="384">
-                  <path
-                    d="M100 150 Q120 140 140 150 Q160 160 180 150 Q200 140 220 150"
-                    fill="none"
-                    stroke="#000"
-                    strokeWidth="1"
-                    opacity="0.3"
-                  />
-                  <path
-                    d="M80 200 Q100 190 120 200 Q140 210 160 200"
-                    fill="none"
-                    stroke="#000"
-                    strokeWidth="1"
-                    opacity="0.2"
-                  />
-                </pattern>
               </defs>
 
               <circle
@@ -159,26 +143,26 @@ export default function Hero() {
                 cy="192"
                 r="180"
                 fill="none"
-                stroke="#000"
+                stroke="#fff"
                 strokeWidth="1"
                 opacity="0.4"
                 filter="url(#glow)"
               />
 
-              <circle cx="192" cy="192" r="150" fill="none" stroke="#000" strokeWidth="1" opacity="0.3" />
-              <circle cx="192" cy="192" r="120" fill="none" stroke="#000" strokeWidth="1" opacity="0.2" />
-              <circle cx="192" cy="192" r="90" fill="none" stroke="#000" strokeWidth="1" opacity="0.15" />
-              <circle cx="192" cy="192" r="60" fill="none" stroke="#000" strokeWidth="1" opacity="0.1" />
+              <circle cx="192" cy="192" r="150" fill="none" stroke="#fff" strokeWidth="1" opacity="0.3" />
+              <circle cx="192" cy="192" r="120" fill="none" stroke="#fff" strokeWidth="1" opacity="0.2" />
+              <circle cx="192" cy="192" r="90" fill="none" stroke="#fff" strokeWidth="1" opacity="0.15" />
+              <circle cx="192" cy="192" r="60" fill="none" stroke="#fff" strokeWidth="1" opacity="0.1" />
 
-              <path d="M 192 12 Q 192 192 192 372" fill="none" stroke="#000" strokeWidth="1" opacity="0.4" />
-              <path d="M 192 12 Q 120 192 192 372" fill="none" stroke="#000" strokeWidth="1" opacity="0.3" />
-              <path d="M 192 12 Q 264 192 192 372" fill="none" stroke="#000" strokeWidth="1" opacity="0.3" />
-              <path d="M 192 12 Q 156 192 192 372" fill="none" stroke="#000" strokeWidth="1" opacity="0.2" />
-              <path d="M 192 12 Q 228 192 192 372" fill="none" stroke="#000" strokeWidth="1" opacity="0.2" />
+              <path d="M 192 12 Q 192 192 192 372" fill="none" stroke="#fff" strokeWidth="1" opacity="0.4" />
+              <path d="M 192 12 Q 120 192 192 372" fill="none" stroke="#fff" strokeWidth="1" opacity="0.3" />
+              <path d="M 192 12 Q 264 192 192 372" fill="none" stroke="#fff" strokeWidth="1" opacity="0.3" />
+              <path d="M 192 12 Q 156 192 192 372" fill="none" stroke="#fff" strokeWidth="1" opacity="0.2" />
+              <path d="M 192 12 Q 228 192 192 372" fill="none" stroke="#fff" strokeWidth="1" opacity="0.2" />
 
-              <ellipse cx="192" cy="192" rx="180" ry="60" fill="none" stroke="#000" strokeWidth="1" opacity="0.3" />
-              <ellipse cx="192" cy="192" rx="180" ry="120" fill="none" stroke="#000" strokeWidth="1" opacity="0.2" />
-              <ellipse cx="192" cy="192" rx="150" ry="40" fill="none" stroke="#000" strokeWidth="1" opacity="0.2" />
+              <ellipse cx="192" cy="192" rx="180" ry="60" fill="none" stroke="#fff" strokeWidth="1" opacity="0.3" />
+              <ellipse cx="192" cy="192" rx="180" ry="120" fill="none" stroke="#fff" strokeWidth="1" opacity="0.2" />
+              <ellipse cx="192" cy="192" rx="150" ry="40" fill="none" stroke="#fff" strokeWidth="1" opacity="0.2" />
 
               {connectionNodes.map((node, index) => (
                 <g key={index}>
@@ -186,11 +170,11 @@ export default function Hero() {
                     cx={node.x}
                     cy={node.y}
                     r={node.active ? "4" : "2"}
-                    fill="#000"
+                    fill="#fff"
                     opacity={node.active ? "0.9" : "0.5"}
                   />
                   {node.active && (
-                    <circle cx={node.x} cy={node.y} r="8" fill="none" stroke="#000" strokeWidth="1" opacity="0.4">
+                    <circle cx={node.x} cy={node.y} r="8" fill="none" stroke="#fff" strokeWidth="1" opacity="0.4">
                       <animate attributeName="r" values="8;16;8" dur="2s" repeatCount="indefinite" />
                       <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite" />
                     </circle>
@@ -198,22 +182,22 @@ export default function Hero() {
                 </g>
               ))}
 
-              <line x1="100" y1="120" x2="280" y2="140" stroke="#000" strokeWidth="1" opacity="0.4">
+              <line x1="100" y1="120" x2="280" y2="140" stroke="#fff" strokeWidth="1" opacity="0.4">
                 <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite" />
               </line>
-              <line x1="140" y1="260" x2="240" y2="240" stroke="#000" strokeWidth="1" opacity="0.4">
+              <line x1="140" y1="260" x2="240" y2="240" stroke="#fff" strokeWidth="1" opacity="0.4">
                 <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.5s" repeatCount="indefinite" />
               </line>
-              <line x1="192" y1="100" x2="320" y2="220" stroke="#000" strokeWidth="1" opacity="0.4">
+              <line x1="192" y1="100" x2="320" y2="220" stroke="#fff" strokeWidth="1" opacity="0.4">
                 <animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite" />
               </line>
 
-              <circle cx="100" cy="120" r="1" fill="#000">
+              <circle cx="100" cy="120" r="1" fill="#fff">
                 <animateMotion dur="3s" repeatCount="indefinite">
                   <path d="M 0 0 L 180 20 L 140 140" />
                 </animateMotion>
               </circle>
-              <circle cx="280" cy="140" r="1" fill="#000">
+              <circle cx="280" cy="140" r="1" fill="#fff">
                 <animateMotion dur="4s" repeatCount="indefinite">
                   <path d="M 0 0 L -140 100 L -40 -40" />
                 </animateMotion>
@@ -221,85 +205,77 @@ export default function Hero() {
             </svg>
 
             <div
-              className="absolute inset-0 border border-gray-300 rounded-full opacity-10 animate-spin"
+              className="absolute inset-0 border border-white/20 rounded-full opacity-10 animate-spin"
               style={{ animationDuration: "30s" }}
             ></div>
             <div
-              className="absolute inset-8 border border-gray-400 rounded-full opacity-15 animate-spin"
+              className="absolute inset-8 border border-white/30 rounded-full opacity-15 animate-spin"
               style={{ animationDuration: "20s", animationDirection: "reverse" }}
             ></div>
           </div>
         </div>
 
         <div className="mb-10 sm:mb-12">
-          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-light tracking-wider mb-6 font-mono leading-tight">
-            SEEKER<span className="font-bold">SIM</span>
-            <sup className="text-2xl">™</sup>
+          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-light tracking-wider mb-6 font-mono leading-tight text-white">
+            MOON<span className="font-bold">WARE</span>
+            <span className="text-3xl sm:text-5xl lg:text-7xl"> OS</span>
           </h1>
-          <div className="w-32 sm:w-40 h-px bg-black mx-auto mb-6 sm:mb-8 relative">
-            <div className="absolute left-0 top-0 h-full bg-black animate-pulse" style={{ width: "100%" }}></div>
+          <div className="w-32 sm:w-40 h-px bg-white mx-auto mb-6 sm:mb-8 relative">
+            <div className="absolute left-0 top-0 h-full bg-white animate-pulse" style={{ width: "100%" }}></div>
           </div>
-          <p className="text-lg sm:text-2xl font-light tracking-wide text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            GLOBAL ESIM CONNECTIVITY • PAY WITH CRYPTO
+          <p className="text-lg sm:text-2xl font-light tracking-wide text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            THE PRIVACY LAYER OF SOLANA
             <br />
-            <span className="font-mono text-xs sm:text-lg">180+ COUNTRIES • ZERO ROAMING FEES • INSTANT ACTIVATION</span>
+            <span className="font-mono text-xs sm:text-lg text-gray-500">A MODULAR SYSTEM THAT MAKES PRIVACY A NATIVE FEATURE OF THE BLOCKCHAIN</span>
             <br />
-            <span className="font-mono text-xs sm:text-lg flex flex-wrap justify-center items-center gap-x-2">
-              POWERED BY: <span className="font-bold">$SEEKER</span> • CONTRACT ADDRESS:{" "}
-              <a 
-                href="https://solscan.io/token/BkWjb5NBDYaUCK29bU7ujcXifJFWPvxS5qijkhJDpump" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-800 hover:underline transition-colors break-all"
-              >
-                BkWjb5NBDYaUCK29bU7ujcXifJFWPvxS5qijkhJDpump
-              </a>
+            <span className="font-mono text-xs sm:text-lg text-gray-500 mt-2 inline-block">
+              FROM STEALTH TRANSACTIONS TO ENCRYPTED COMMUNICATION • STAY INVISIBLE WHILE STAYING CONNECTED
             </span>
           </p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-mono mb-10 sm:mb-12">
           <div className="flex items-center space-x-2 group">
-            <div className="w-2 h-2 bg-black rounded-full animate-pulse"></div>
-            <span className="group-hover:text-gray-600 transition-colors">SOLANA POWERED</span>
+            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            <span className="text-gray-400 group-hover:text-white transition-colors">SOLANA LAYER</span>
           </div>
           <div className="flex items-center space-x-2 group">
-            <div className="w-2 h-2 bg-gray-400 rounded-full"></div>
-            <span className="group-hover:text-gray-600 transition-colors">GSMA SGP.22</span>
+            <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+            <span className="text-gray-400 group-hover:text-white transition-colors">STEALTH ADDRESSES</span>
           </div>
           <div className="flex items-center space-x-2 group">
-            <div className="w-2 h-2 bg-black rounded-full animate-ping"></div>
-            <span className="group-hover:text-gray-600 transition-colors">CRYPTO NATIVE</span>
+            <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+            <span className="text-gray-400 group-hover:text-white transition-colors">ZK PROOFS</span>
           </div>
           <div className="flex items-center space-x-2 group">
-            <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
-            <span className="group-hover:text-gray-600 transition-colors">PRIVACY FIRST</span>
+            <div className="w-2 h-2 bg-gray-500 rounded-full"></div>
+            <span className="text-gray-400 group-hover:text-white transition-colors">ZERO METADATA</span>
           </div>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 max-w-2xl mx-auto">
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold">180+</div>
-            <div className="text-xs text-gray-500 font-mono">COUNTRIES</div>
+            <div className="text-3xl font-mono font-bold text-white">100%</div>
+            <div className="text-xs text-gray-500 font-mono">PRIVACY</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold">650+</div>
-            <div className="text-xs text-gray-500 font-mono">NETWORKS</div>
+            <div className="text-3xl font-mono font-bold text-white">0</div>
+            <div className="text-xs text-gray-500 font-mono">METADATA</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold">~1sec</div>
-            <div className="text-xs text-gray-500 font-mono">PAYMENTS</div>
+            <div className="text-3xl font-mono font-bold text-white">∞</div>
+            <div className="text-xs text-gray-500 font-mono">ALIASES</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold">$0.00</div>
-            <div className="text-xs text-gray-500 font-mono">ROAMING</div>
+            <div className="text-3xl font-mono font-bold text-white">ZK</div>
+            <div className="text-xs text-gray-500 font-mono">PROOFS</div>
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-black rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-black rounded-full mt-2 animate-bounce"></div>
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
     </section>

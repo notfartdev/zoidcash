@@ -1,17 +1,15 @@
-import Image from "next/image"
+"use client"
+
 import { Suspense } from "react"
 import LoadingSpinner from "../components/LoadingSpinner"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
-
-export const metadata = {
-  title: "Documentation - SeekerSIM™",
-  description: "Complete documentation for SeekerSIM blockchain eSIM platform",
-}
+import FluidBackground from "../components/FluidBackground"
 
 export default function DocsPage() {
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="min-h-screen bg-[#0a0a0a] text-[#e5e5e5] relative">
+      <FluidBackground />
       <Navigation />
       <Suspense fallback={<LoadingSpinner />}>
         <DocsContent />
@@ -23,51 +21,43 @@ export default function DocsPage() {
 
 function DocsContent() {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24 pb-20 relative z-10">
       <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
         <div className="mb-16">
-          <h1 className="text-6xl font-light tracking-wider mb-6 font-mono">
-            SEEKER<span className="font-bold">SIM</span>
-            <sup className="text-2xl">™</sup>
+          <h1 className="text-6xl font-light tracking-wider mb-6 font-mono text-white">
+            MOON<span className="font-bold">WARE</span> OS
           </h1>
-          <div className="w-32 h-px bg-black mb-8"></div>
-          <p className="text-2xl text-gray-600 leading-relaxed">
-            Complete Technical Documentation
+          <div className="w-32 h-px bg-white mb-8"></div>
+          <p className="text-2xl text-gray-400 leading-relaxed">
+            The Privacy Layer of Solana
           </p>
           <p className="text-lg text-gray-500 mt-4 font-mono">
-            Version 2.1.0 • Updated November 2025
+            Complete Technical Documentation • Version 1.0.0
           </p>
         </div>
 
         {/* Table of Contents */}
-        <div className="mb-16 bg-gray-50 border-2 border-gray-200 p-8">
-          <h2 className="text-xl font-mono font-bold mb-6 tracking-wide">TABLE OF CONTENTS</h2>
+        <div className="mb-16 bg-[#1a1a1a] border-2 border-white/20 p-8">
+          <h2 className="text-xl font-mono font-bold mb-6 tracking-wide text-white">TABLE OF CONTENTS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a href="#overview" className="text-sm font-mono text-gray-600 hover:text-black transition-colors">
-              01. Overview
-            </a>
-            <a href="#problem" className="text-sm font-mono text-gray-600 hover:text-black transition-colors">
-              02. Problem Statement
-            </a>
-            <a href="#solution" className="text-sm font-mono text-gray-600 hover:text-black transition-colors">
-              03. Solution
-            </a>
-            <a href="#how-it-works" className="text-sm font-mono text-gray-600 hover:text-black transition-colors">
-              04. How It Works
-            </a>
-            <a href="#architecture" className="text-sm font-mono text-gray-600 hover:text-black transition-colors">
-              05. Technical Architecture
-            </a>
-            <a href="#features" className="text-sm font-mono text-gray-600 hover:text-black transition-colors">
-              06. Key Features
-            </a>
-            <a href="#market" className="text-sm font-mono text-gray-600 hover:text-black transition-colors">
-              07. Market Opportunity
-            </a>
-            <a href="#getting-started" className="text-sm font-mono text-gray-600 hover:text-black transition-colors">
-              08. Getting Started
-            </a>
+            {[
+              { href: "#overview", label: "01. Overview" },
+              { href: "#mission", label: "02. Mission & Vision" },
+              { href: "#architecture", label: "03. Architecture" },
+              { href: "#modules", label: "04. Core Modules" },
+              { href: "#cryptography", label: "05. Cryptography" },
+              { href: "#privacy", label: "06. Privacy by Design" },
+              { href: "#getting-started", label: "07. Getting Started" },
+            ].map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm font-mono text-gray-400 hover:text-white transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
         </div>
 
@@ -75,500 +65,135 @@ function DocsContent() {
         <div className="space-y-20">
           {/* Section 1: Overview */}
           <section id="overview" className="scroll-mt-24">
-            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-black pb-4">
+            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-white pb-4 text-white">
               01. OVERVIEW
             </h2>
             <div className="prose prose-lg max-w-none">
-              <p className="text-gray-700 leading-relaxed mb-6">
-                SeekerSIM™ is a revolutionary blockchain-based global eSIM connectivity platform designed specifically
-                for Solana Seeker phones and expanding to all eSIM-capable devices. The platform eliminates traditional
-                roaming fees, enables instant activation across 180+ countries, and accepts cryptocurrency payments.
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Moonware OS is the privacy layer of Solana. It is a modular system that makes privacy a native feature 
+                of the blockchain. From stealth transactions to encrypted communication, Moonware enables you to stay 
+                invisible while staying connected.
               </p>
               
+              <div className="bg-[#1a1a1a] border-2 border-white/20 p-6 my-8">
+                <div className="mb-2 text-gray-400 font-mono text-sm">// Mission Statement</div>
+                <p className="text-white font-mono">
+                  "Privacy is not about hiding. It is about protecting what matters."
+                </p>
+                <div className="mt-2 text-xs text-gray-500 font-mono">- The Moonware OS Team</div>
+              </div>
+
               <div className="grid grid-cols-3 gap-6 my-8">
-                <div className="bg-gray-50 border border-gray-200 p-6">
-                  <div className="text-3xl font-mono font-bold mb-2">180+</div>
-                  <div className="text-sm text-gray-600 font-mono">Countries Covered</div>
+                <div className="bg-[#1a1a1a] border border-white/10 p-6">
+                  <div className="text-3xl font-mono font-bold mb-2 text-white">100%</div>
+                  <div className="text-sm text-gray-400 font-mono">Privacy</div>
                 </div>
-                <div className="bg-gray-50 border border-gray-200 p-6">
-                  <div className="text-3xl font-mono font-bold mb-2">650+</div>
-                  <div className="text-sm text-gray-600 font-mono">Mobile Networks</div>
+                <div className="bg-[#1a1a1a] border border-white/10 p-6">
+                  <div className="text-3xl font-mono font-bold mb-2 text-white">0</div>
+                  <div className="text-sm text-gray-400 font-mono">Metadata</div>
                 </div>
-                <div className="bg-gray-50 border border-gray-200 p-6">
-                  <div className="text-3xl font-mono font-bold mb-2">$0</div>
-                  <div className="text-sm text-gray-600 font-mono">Roaming Fees</div>
+                <div className="bg-[#1a1a1a] border border-white/10 p-6">
+                  <div className="text-3xl font-mono font-bold mb-2 text-white">∞</div>
+                  <div className="text-sm text-gray-400 font-mono">Aliases</div>
                 </div>
-              </div>
-
-              <div className="bg-black text-white p-6 my-8 font-mono text-sm">
-                <div className="mb-2 text-gray-400">// Mission Statement</div>
-                <p>
-                  "Making mobile connectivity as borderless as the internet,<br />
-                  and as user-controlled as cryptocurrency."
-                </p>
               </div>
             </div>
           </section>
 
-          {/* Section 2: Problem */}
-          <section id="problem" className="scroll-mt-24">
-            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-black pb-4">
-              02. PROBLEM STATEMENT
+          {/* Section 2: Mission */}
+          <section id="mission" className="scroll-mt-24">
+            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-white pb-4 text-white">
+              02. MISSION & VISION
             </h2>
             <div className="prose prose-lg max-w-none">
-              <h3 className="text-2xl font-mono font-bold mb-4">Friction in Global Connectivity</h3>
+              <h3 className="text-2xl font-mono font-bold mb-4 text-white">Our Mission</h3>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
-                International travelers, digital nomads, and mobile users face significant challenges with traditional
-                mobile connectivity:
+              <p className="text-gray-300 leading-relaxed mb-6">
+                We believe privacy is not a privilege but a right. Moonware OS exists to restore digital freedom by 
+                building privacy, anonymity, and control into Solana. Our tools let you transact, communicate, and 
+                build without exposure or surveillance.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="border-2 border-red-200 bg-red-50 p-6">
-                  <h4 className="font-mono font-bold text-lg mb-3">💸 Expensive Roaming</h4>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li>• Average roaming cost: <strong>$41 per trip</strong></li>
-                    <li>• UK travelers lost <strong>$670M+</strong> in 2022</li>
-                    <li>• Hidden fees and bill shock</li>
-                  </ul>
-                </div>
-
-                <div className="border-2 border-red-200 bg-red-50 p-6">
-                  <h4 className="font-mono font-bold text-lg mb-3">🔒 Privacy Concerns</h4>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li>• Personal data sharing required</li>
-                    <li>• ID registration mandates</li>
-                    <li>• Centralized carrier control</li>
-                  </ul>
-                </div>
-
-                <div className="border-2 border-red-200 bg-red-50 p-6">
-                  <h4 className="font-mono font-bold text-lg mb-3">⏱️ Time & Inconvenience</h4>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li>• Hunting for local SIM cards</li>
-                    <li>• Language barriers</li>
-                    <li>• Physical SIM swapping hassle</li>
-                  </ul>
-                </div>
-
-                <div className="border-2 border-red-200 bg-red-50 p-6">
-                  <h4 className="font-mono font-bold text-lg mb-3">👨‍💻 Developer Complexity</h4>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li>• Complex carrier contracts</li>
-                    <li>• Opaque billing systems</li>
-                    <li>• Fragmented APIs</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-gray-100 border-l-4 border-black p-6 my-8">
-                <p className="font-mono text-sm mb-2 text-gray-600">KEY INSIGHT:</p>
-                <p className="text-lg font-bold">
-                  90% of travelers are willing to use eSIMs if given a convenient option
+              <div className="bg-[#1a1a1a] border-l-4 border-white p-6 my-8">
+                <p className="font-mono text-sm mb-2 text-gray-400">PHILOSOPHY:</p>
+                <p className="text-lg font-bold text-white">
+                  Privacy by default, transparency by choice.
                 </p>
-                <p className="text-sm text-gray-600 mt-2">
-                  Yet the $60B+ global roaming market remains fragmented and user-hostile
+                <p className="text-sm text-gray-400 mt-2">
+                  Cryptography replaces trust. Decentralization is defense.
                 </p>
               </div>
 
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Beneath the roaming pain points sits a deeper structural issue with Remote SIM Provisioning (RSP).
-                The entire lifecycle depends on exchanging keys and X.509 certificates between user equipment,
-                mobile network operators, and subscription managers. Trust is concentrated in a small set of
-                intermediaries who manually orchestrate profile ordering, authentication, and switching. This closed
-                environment erodes transparency, introduces delays, and forces the user to blindly trust every step of
-                the chain.
+              <h3 className="text-2xl font-mono font-bold mb-4 mt-8 text-white">The Vision</h3>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Moonware OS was created to make privacy simple, accessible, and built into the core of blockchain. 
+                Our vision is a world where every digital interaction can be private by default. We want to make privacy 
+                feel normal again, as natural as sending a message or making a payment.
               </p>
-
-              <div className="bg-white border-2 border-gray-200 p-6 mb-8">
-                <h4 className="font-mono font-bold text-lg mb-4">❗ RSP PROBLEM SUMMARY</h4>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li>• Trust between service providers and consumers hinges on opaque intermediaries.</li>
-                  <li>• Profile management is complex, centralized, and prone to inefficiencies or data misuse.</li>
-                  <li>• Manual processes remain embedded in activation, switching, and settlement workflows.</li>
-                  <li>• TLS tunnels do the heavy lifting for core security, leaving the protocol brittle to passive attacks.</li>
-                  <li>• Sensitive identifiers leak throughout the flow, enabling correlation and tracking.</li>
-                  <li>• User plane data lacks integrity guarantees, exposing sessions to tampering.</li>
-                </ul>
-              </div>
-
-              <div className="bg-gray-50 border border-gray-200 p-6 mb-10">
-                <h4 className="font-mono font-bold text-lg mb-4">Personas and Interactions</h4>
-                <p className="text-sm text-gray-600 mb-6">
-                  The legacy RSP model relies on a tightly coupled dance between the Mobile Network Operator (MNO),
-                  Subscription Manager (SM-DP+), Local Profile Assistant (LPA), and the eUICC embedded in the device.
-                  Certification bodies such as the GSMA root the hierarchy, while equipment manufacturers must ensure
-                  hardware security. The graphic below captures the trust boundaries and certificate chains required
-                  just to deliver a single profile.
-                </p>
-                <div className="border border-dashed border-gray-300 p-4 bg-white">
-                  <Image
-                    src="/rsp-architecture.png"
-                    alt="Legacy RSP personas and interactions"
-                    width={1200}
-                    height={900}
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
             </div>
           </section>
 
-          {/* Section 3: Solution */}
-          <section id="solution" className="scroll-mt-24">
-            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-black pb-4">
-              03. SOLUTION
-            </h2>
-            <div className="prose prose-lg max-w-none">
-              <h3 className="text-2xl font-mono font-bold mb-4">Blockchain-Based Global eSIM Service</h3>
-              
-              <p className="text-gray-700 leading-relaxed mb-6">
-                SeekerSIM is a global mobile service powered by blockchain and eSIM technology. It enables users to
-                instantly download local eSIM profiles for data in virtually any country, pay with crypto, and maintain
-                privacy.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="border-2 border-green-200 bg-green-50 p-6">
-                  <div className="text-4xl mb-3">🌍</div>
-                  <h4 className="font-mono font-bold text-lg mb-2">Global Coverage</h4>
-                  <p className="text-sm text-gray-700">
-                    Instant provisioning in 180+ countries via 650+ carrier networks
-                  </p>
-                </div>
-
-                <div className="border-2 border-green-200 bg-green-50 p-6">
-                  <div className="text-4xl mb-3">⚡</div>
-                  <h4 className="font-mono font-bold text-lg mb-2">Crypto Payments</h4>
-                  <p className="text-sm text-gray-700">
-                    Pay with SOL/USDC via Seed Vault. ~1 second finality, {"<"}$0.01 fees
-                  </p>
-                </div>
-
-                <div className="border-2 border-green-200 bg-green-50 p-6">
-                  <div className="text-4xl mb-3">🔐</div>
-                  <h4 className="font-mono font-bold text-lg mb-2">Privacy First</h4>
-                  <p className="text-sm text-gray-700">
-                    Zero-knowledge KYC, minimal data collection, pseudonymous by design
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-black text-white p-8 my-8">
-                <h4 className="font-mono font-bold text-xl mb-4">VALUE PROPOSITION</h4>
-                <div className="grid grid-cols-3 gap-8 text-center">
-                  <div>
-                    <div className="text-3xl font-mono font-bold mb-2">94%</div>
-                    <div className="text-xs text-gray-400 font-mono uppercase">Cost Savings</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-mono font-bold mb-2">{"<"}3sec</div>
-                    <div className="text-xs text-gray-400 font-mono uppercase">Activation Time</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-mono font-bold mb-2">100%</div>
-                    <div className="text-xs text-gray-400 font-mono uppercase">Automated</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 border-2 border-gray-200 p-6">
-                <h4 className="font-mono font-bold text-lg mb-4">Approach</h4>
-                <p className="text-sm text-gray-700 mb-4">
-                  OpenRSP democratizes remote SIM provisioning by decentralizing trust, enforcing privacy-preserving
-                  cryptography, and automating orchestration with smart contracts. Sensitive profile data never leaves
-                  hardware-secure boundaries, yet every entity can independently verify compliance. The protocol
-                  leverages a blend of zero-knowledge proofs, secure enclaves, and programmable settlement on Solana to
-                  deliver end-to-end guarantees that traditional stacks cannot match.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="border border-gray-200 p-4 bg-white">
-                    <h5 className="font-mono font-bold text-sm mb-2">Modern Cryptography</h5>
-                    <ul className="space-y-1 text-xs text-gray-600">
-                      <li>• Zero Knowledge Proofs (zkCX, privacy-preserving certificate exchange)</li>
-                      <li>• ZKP-based revocation checking and EID shielding</li>
-                      <li>• Identity-Based Non-Interactive Key Exchange (IBNIKE) for Secure Identifiers</li>
-                      <li>• Multi-Party Oblivious Transfers (MPOT) for collaborative provisioning</li>
-                    </ul>
-                  </div>
-                  <div className="border border-gray-200 p-4 bg-white">
-                    <h5 className="font-mono font-bold text-sm mb-2">Automation & Ownership</h5>
-                    <ul className="space-y-1 text-xs text-gray-600">
-                      <li>• Smart contracts manage deposits, refunds, and settlement instantly</li>
-                      <li>• TEEs execute device-side operations while preserving secrets</li>
-                      <li>• On-chain registry records proofs for continuous compliance</li>
-                      <li>• Users retain custody of their profiles and activation credentials</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Section 4: How It Works */}
-          <section id="how-it-works" className="scroll-mt-24">
-            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-black pb-4">
-              04. HOW IT WORKS
-            </h2>
-            <div className="prose prose-lg max-w-none">
-              <h3 className="text-2xl font-mono font-bold mb-6">User Experience Flow</h3>
-
-              <div className="space-y-6">
-                {[
-                  {
-                    step: "01",
-                    title: "PLAN SELECTION",
-                    description: "User opens the SeekerSIM app on their Solana Seeker phone and selects a destination and data package (e.g., 1GB in France for 7 days, or pay-as-you-go).",
-                    tech: "UI/UX Layer",
-                  },
-                  {
-                    step: "02",
-                    title: "CRYPTO PAYMENT",
-                    description: "User approves payment with SOL or USDC via Seed Vault wallet with biometric authentication. Transaction confirmed on Solana blockchain in ~1 second.",
-                    tech: "Blockchain Layer",
-                  },
-                  {
-                    step: "03",
-                    title: "SMART CONTRACT VERIFICATION",
-                    description: "On-chain smart contract verifies payment, credits user balance, and triggers provisioning event. All transparent and auditable on Solana.",
-                    tech: "Smart Contract Layer",
-                  },
-                  {
-                    step: "04",
-                    title: "API PROVISIONING",
-                    description: "Backend service detects blockchain event and calls eSIM provider API (Tier-1/Tier-2 aggregators) to generate eSIM profile and QR code.",
-                    tech: "API Integration Layer",
-                  },
-                  {
-                    step: "05",
-                    title: "INSTANT ACTIVATION",
-                    description: "eSIM profile delivered to device via QR code or direct installation. User connects to local network and is online within seconds.",
-                    tech: "Network Layer",
-                  },
-                ].map((item, index) => (
-                  <div key={index} className="border-2 border-gray-200 p-6 relative">
-                    <div className="absolute top-0 left-0 w-12 h-12 border-b-2 border-r-2 border-black"></div>
-                    <div className="flex items-start space-x-6">
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 border-2 border-black flex items-center justify-center bg-black text-white">
-                          <span className="text-xl font-mono font-bold">{item.step}</span>
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-xl font-mono font-bold mb-2">{item.title}</h4>
-                        <p className="text-gray-700 mb-3 leading-relaxed">{item.description}</p>
-                        <div className="inline-block px-3 py-1 bg-gray-100 border border-gray-300 text-xs font-mono text-gray-600">
-                          {item.tech}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="my-10 bg-white border-2 border-gray-200 p-6">
-                <h4 className="font-mono font-bold text-lg mb-4">Provisioning Workflow Deep Dive</h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  Once the Local Profile Assistant (LPA) initiates provisioning, the device must locate the
-                  Subscription Manager (SM-DP+) responsible for delivering the encrypted carrier profile. Depending on
-                  the activation method, the SM address may be obtained via QR code, manual entry, firmware defaults, or
-                  GSMA discovery services. After resolving the endpoint, the LPA establishes an HTTPS channel, validates
-                  X.509 certificates, negotiates a secure tunnel with the eUICC, and finally installs the encrypted
-                  profile using either activation codes or eSIM identifiers.
-                </p>
-                <div className="border border-dashed border-gray-300 p-4 bg-gray-50">
-                  <Image
-                    src="/esim-installation.png"
-                    alt="Detailed eSIM profile provisioning flow"
-                    width={1200}
-                    height={900}
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-
-              <div className="mt-8 bg-blue-50 border border-blue-200 p-6">
-                <h4 className="font-mono font-bold mb-3">⚡ AVERAGE COMPLETION TIME</h4>
-                <p className="text-2xl font-mono font-bold">~3 seconds end-to-end</p>
-                <p className="text-sm text-gray-600 mt-2">From plan selection to active connectivity</p>
-              </div>
-            </div>
-          </section>
-
-          {/* Section 5: Architecture */}
+          {/* Section 3: Architecture */}
           <section id="architecture" className="scroll-mt-24">
-            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-black pb-4">
-              05. TECHNICAL ARCHITECTURE
+            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-white pb-4 text-white">
+              03. ARCHITECTURE
             </h2>
             <div className="prose prose-lg max-w-none">
-              <h3 className="text-2xl font-mono font-bold mb-6">Platform Layers</h3>
+              <h3 className="text-2xl font-mono font-bold mb-6 text-white">Modular System Design</h3>
+
+              <p className="text-gray-300 leading-relaxed mb-8">
+                Moonware OS is built as a set of independent yet connected modules. Each one brings a layer of privacy 
+                to the Solana ecosystem. You can use them individually or as one integrated privacy layer.
+              </p>
 
               <div className="space-y-8">
-                {/* Client Layer */}
-                <div className="border-2 border-gray-200 p-6">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    <h4 className="text-xl font-mono font-bold">CLIENT LAYER</h4>
-                  </div>
-                  <p className="text-gray-700 mb-4">
-                    Primary: <strong>Solana Seeker Phone</strong> with built-in Seed Vault wallet and eSIM support
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    Future: Web app, iOS/Android apps, IoT devices, laptops with eSIM
-                  </p>
-                </div>
-
-                {/* Application Layer */}
-                <div className="border-2 border-gray-200 p-6">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                    <h4 className="text-xl font-mono font-bold">APPLICATION LAYER</h4>
-                  </div>
-                  <ul className="space-y-2 text-gray-700">
-                    <li><strong>Mobile App:</strong> Native Seeker app with Solana Mobile Stack integration</li>
-                    <li><strong>SDK:</strong> Developer kit for third-party integrations</li>
-                    <li><strong>Seed Vault:</strong> Secure enclave for private key storage and biometric auth</li>
-                  </ul>
-                </div>
-
-                {/* Infrastructure Layer */}
-                <div className="border-2 border-gray-200 p-6 bg-gray-50">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
-                    <h4 className="text-xl font-mono font-bold">INFRASTRUCTURE LAYER</h4>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <strong className="font-mono">Solana Blockchain</strong>
-                      <p className="text-sm text-gray-600">Payment processing, smart contracts, settlement</p>
-                    </div>
-                    <div>
-                      <strong className="font-mono">Edge API (Vercel)</strong>
-                      <p className="text-sm text-gray-600">Global API gateway, low-latency endpoints</p>
-                    </div>
-                    <div>
-                      <strong className="font-mono">IPFS Storage</strong>
-                      <p className="text-sm text-gray-600">Decentralized data storage</p>
-                    </div>
-                    <div>
-                      <strong className="font-mono">Auth Layer</strong>
-                      <p className="text-sm text-gray-600">zk-KYC, DID verification</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Provider Layer */}
-                <div className="border-2 border-gray-200 p-6">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
-                    <h4 className="text-xl font-mono font-bold">ESIM PROVIDER LAYER</h4>
-                  </div>
-                  <p className="text-gray-700 mb-4">
-                    Partnerships with tier-1 eSIM aggregators providing global coverage:
-                  </p>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    <li>• <strong>Tier-1 Aggregator:</strong> Primary provider with 650+ networks</li>
-                    <li>• <strong>Tier-2 Aggregator:</strong> Backup and regional specialists</li>
-                    <li>• <strong>Direct MNO:</strong> Future direct carrier partnerships</li>
-                  </ul>
-                </div>
-
-                {/* Network Layer */}
-                <div className="border-2 border-gray-200 p-6">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    <h4 className="text-xl font-mono font-bold">GLOBAL NETWORK LAYER</h4>
-                  </div>
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div>
-                      <div className="text-2xl font-mono font-bold">650+</div>
-                      <div className="text-xs text-gray-600 font-mono">Carriers</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-mono font-bold">180+</div>
-                      <div className="text-xs text-gray-600 font-mono">Countries</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-mono font-bold">4G/5G</div>
-                      <div className="text-xs text-gray-600 font-mono">Support</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-12 border-2 border-gray-200 p-6 bg-white">
-                <h4 className="font-mono font-bold text-lg mb-4">Certificate Trust Distribution</h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  GSMA&apos;s root certificate authority underpins every interaction in the RSP stack. Today, end entities
-                  must trust that the certificate chain presented by upstream parties remains valid and uncompromised. By
-                  introducing zero-knowledge certificate exchange (zkCX), OpenRSP shifts verification from closed data
-                  centers to on-chain verifiers. Entities publish proofs that their X.509 certificates satisfy policy
-                  constraints without leaking sensitive metadata, enabling anyone to validate authenticity programmatically.
-                </p>
-                <div className="border border-dashed border-gray-300 p-4 bg-gray-50">
-                  <Image
-                    src="/openrsp-ci-zkp-solution.png"
-                    alt="Certificate trust model enhanced with zero-knowledge proofs"
-                    width={1200}
-                    height={900}
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Section 6: Features */}
-          <section id="features" className="scroll-mt-24">
-            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-black pb-4">
-              06. KEY FEATURES
-            </h2>
-            <div className="prose prose-lg max-w-none">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   {
-                    title: "ICCID Search & Validation",
-                    description: "Real-time ICCID validation with global database integration",
-                    specs: ["99.9% accuracy", "<100ms response", "Global coverage"],
+                    title: "MOONOS",
+                    description: "Secure foundation that creates ephemeral sessions. Hides device, location, and wallet data behind temporary, disposable sessions.",
+                    features: ["Ephemeral Sessions", "Hidden Metadata", "Isolated Wallet Keys", "Secure Routing"]
                   },
                   {
-                    title: "SM-DP+ Integration",
-                    description: "GSMA SGP.22 compliant subscription manager integration",
-                    specs: ["TLS 1.3 security", "24/7 availability", "Unlimited profiles"],
+                    title: "TX SHADOWNET",
+                    description: "Private routing network that hides source and destination. Routes through multiple independent relays where each relay only sees part of the path.",
+                    features: ["Multi-Hop Routing", "Multi-TX Pathways", "Adaptive Mixing", "ZK Proofs for Integrity"]
                   },
                   {
-                    title: "QR Code Activation",
-                    description: "Instant eSIM activation via secure QR code generation",
-                    specs: ["AES-256 encryption", "99.8% success rate", "Instant delivery"],
+                    title: "ID OBFUSCATION",
+                    description: "Removes fixed identity concept. Every action uses new identifiers that cannot be linked to past activity.",
+                    features: ["One-Time Addresses", "Rotating Keys", "No Persistent Identifiers", "MPC Forward Secrecy"]
                   },
                   {
-                    title: "Crypto Payments",
-                    description: "Seamless SOL/USDC payments via Seed Vault",
-                    specs: ["~1sec speed", "<$0.01 fees", "Solana network"],
+                    title: "DARKRELAY MESSAGING",
+                    description: "Encrypted communication layer. Combines off-chain encryption with on-chain commitments. Only intended recipient can read.",
+                    features: ["End-to-End Encryption", "Off-Chain Storage", "Commitment Anchors", "Selective Disclosure"]
                   },
                   {
-                    title: "Global Coverage",
-                    description: "Access to 650+ networks across 180+ countries",
-                    specs: ["Auto-failover", "Best network selection", "99.9% uptime"],
+                    title: "MOONPAY",
+                    description: "Private payment system. Each pay link creates a unique, one-time payment path. Receiver stays invisible.",
+                    features: ["Stealth Addresses", "ShadowNet Routing", "HPKE Encryption", "Auto Sweep"]
                   },
                   {
-                    title: "Privacy Protection",
-                    description: "Zero-knowledge proofs and minimal data collection",
-                    specs: ["zk-KYC", "DID support", "E2E encryption"],
+                    title: "MOONROUTE",
+                    description: "Private swap system for DeFi. Pairs stealth addresses with ShadowNet relays for hidden end-to-end trade paths.",
+                    features: ["One-Time Outputs", "Multi-TX Pathways", "Private Execution", "No Linkability"]
                   },
                   {
-                    title: "x402 Agent Payments",
-                    description: "AI agents can pay for API requests using HTTP 402 protocol",
-                    specs: ["Zero fees", "Instant settlement", "No registration"],
+                    title: "MOONMASK",
+                    description: "Identity shield that protects how users appear. Makes communication, transactions, and actions unlinkable.",
+                    features: ["Ephemeral Moon IDs", "Dynamic Rotation", "Encrypted Metadata", "Decoupled Wallet Linking"]
                   },
-                ].map((feature, index) => (
-                  <div key={index} className="border-2 border-gray-200 p-6 hover:border-black transition-all duration-300">
-                    <h4 className="text-lg font-mono font-bold mb-3">{feature.title}</h4>
-                    <p className="text-gray-700 mb-4 text-sm">{feature.description}</p>
-                    <div className="space-y-1">
-                      {feature.specs.map((spec, i) => (
-                        <div key={i} className="text-xs font-mono text-gray-600">
-                          • {spec}
+                ].map((module, index) => (
+                  <div key={index} className="border-2 border-white/20 bg-[#1a1a1a] p-6 hover:border-white/40 transition-all">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                      <h4 className="text-xl font-mono font-bold text-white">{module.title}</h4>
+                    </div>
+                    <p className="text-gray-300 mb-4 leading-relaxed">{module.description}</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {module.features.map((feature, i) => (
+                        <div key={i} className="text-xs font-mono text-gray-400">
+                          • {feature}
                         </div>
                       ))}
                     </div>
@@ -578,123 +203,197 @@ function DocsContent() {
             </div>
           </section>
 
-          {/* Section 7: Market */}
-          <section id="market" className="scroll-mt-24">
-            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-black pb-4">
-              07. MARKET OPPORTUNITY
+          {/* Section 4: Modules */}
+          <section id="modules" className="scroll-mt-24">
+            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-white pb-4 text-white">
+              04. CORE MODULES
             </h2>
             <div className="prose prose-lg max-w-none">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <div>
-                  <h3 className="text-2xl font-mono font-bold mb-4">eSIM Adoption</h3>
-                  <ul className="space-y-3 text-gray-700">
-                    <li>• <strong>650M+</strong> eSIM devices in 2023</li>
-                    <li>• <strong>2B+</strong> projected by 2025</li>
-                    <li>• <strong>441</strong> operators support eSIM (2024)</li>
-                    <li>• <strong>90%</strong> operator support by 2025</li>
-                  </ul>
-                </div>
+              <p className="text-gray-300 leading-relaxed mb-8">
+                Together, these systems create the Moonware OS privacy stack. Each module works independently but 
+                can be combined for maximum privacy protection.
+              </p>
 
-                <div>
-                  <h3 className="text-2xl font-mono font-bold mb-4">Market Size</h3>
-                  <ul className="space-y-3 text-gray-700">
-                    <li>• <strong>$1.8B</strong> travel eSIM revenue (2025)</li>
-                    <li>• <strong>$8.7B</strong> projected by 2030</li>
-                    <li>• <strong>500%</strong> growth 2023-2028</li>
-                    <li>• <strong>$60B+</strong> roaming market ripe for disruption</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-200 p-8 my-8">
-                <h4 className="font-mono font-bold text-2xl mb-4">CRYPTO + TELECOM CONVERGENCE</h4>
-                <div className="grid grid-cols-2 gap-6">
-                  <div>
-                    <div className="text-4xl font-mono font-bold mb-2">300M+</div>
-                    <div className="text-sm text-gray-600">Global crypto users</div>
-                  </div>
-                  <div>
-                    <div className="text-4xl font-mono font-bold mb-2">150K</div>
-                    <div className="text-sm text-gray-600">Seeker phones pre-ordered</div>
-                  </div>
-                </div>
-              </div>
-
-              <h3 className="text-2xl font-mono font-bold mb-4 mt-12">Target Segments</h3>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="border border-gray-300 p-4 text-center">
-                  <div className="text-2xl mb-2">🌐</div>
-                  <div className="font-mono font-bold text-sm">Digital Nomads</div>
-                </div>
-                <div className="border border-gray-300 p-4 text-center">
-                  <div className="text-2xl mb-2">💎</div>
-                  <div className="font-mono font-bold text-sm">Crypto Users</div>
-                </div>
-                <div className="border border-gray-300 p-4 text-center">
-                  <div className="text-2xl mb-2">✈️</div>
-                  <div className="font-mono font-bold text-sm">Frequent Travelers</div>
+              <div className="bg-[#1a1a1a] border-2 border-white/20 p-8 my-8">
+                <h4 className="font-mono font-bold text-lg mb-4 text-white">PRIVACY-FIRST OPERATING SYSTEM FLOW</h4>
+                <div className="space-y-4">
+                  {[
+                    { step: "1", name: "USER ACTION", detail: "MoonOS creates ephemeral session" },
+                    { step: "2", name: "ID OBFUSCATION", detail: "One-time alias generated" },
+                    { step: "3", name: "SHADOWNET ROUTING", detail: "Transaction routed through relays" },
+                    { step: "4", name: "ENCRYPTION", detail: "HPKE, ZK proofs, MPC applied" },
+                    { step: "5", name: "ZERO METADATA", detail: "Complete privacy achieved" },
+                  ].map((item) => (
+                    <div key={item.step} className="flex items-center space-x-4">
+                      <div className="w-12 h-12 border-2 border-white flex items-center justify-center">
+                        <span className="text-sm font-mono font-bold text-white">{item.step}</span>
+                      </div>
+                      <div>
+                        <div className="font-mono font-bold text-white">{item.name}</div>
+                        <div className="text-xs text-gray-400 font-mono">{item.detail}</div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Section 8: Getting Started */}
-          <section id="getting-started" className="scroll-mt-24">
-            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-black pb-4">
-              08. GETTING STARTED
+          {/* Section 5: Cryptography */}
+          <section id="cryptography" className="scroll-mt-24">
+            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-white pb-4 text-white">
+              05. CRYPTOGRAPHY
             </h2>
             <div className="prose prose-lg max-w-none">
-              <h3 className="text-2xl font-mono font-bold mb-6">For Users</h3>
+              <p className="text-gray-300 leading-relaxed mb-8">
+                Moonware OS is powered by modern cryptography. Privacy is the default setting. Transparency is a choice.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  {
+                    title: "Stealth Addresses",
+                    description: "Make each payment unlinkable. Receivers accept payments without exposing permanent addresses.",
+                    details: "One-time addresses generated per transaction, only sender and receiver can recognize"
+                  },
+                  {
+                    title: "HPKE",
+                    description: "Hybrid Public Key Encryption encrypts messages from sender to receiver.",
+                    details: "Non-interactive, fast, lightweight. Perfect for blockchain use."
+                  },
+                  {
+                    title: "Zero Knowledge Proofs (PLONK)",
+                    description: "Prove validity without revealing data. Fast enough to keep up with Solana's speed.",
+                    details: "Universal setup, small proofs, fast verification, flexible for complex logic"
+                  },
+                  {
+                    title: "MPC",
+                    description: "Multi-Party Computation splits secrets between nodes so no one controls the full picture.",
+                    details: "Secret sharing, distributed computation, threshold security, automatic rotation"
+                  },
+                ].map((item, index) => (
+                  <div key={index} className="border-2 border-white/20 bg-[#1a1a1a] p-6">
+                    <h4 className="text-lg font-mono font-bold mb-3 text-white">{item.title}</h4>
+                    <p className="text-gray-300 mb-3 text-sm">{item.description}</p>
+                    <p className="text-xs text-gray-400 font-mono">{item.details}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Section 6: Privacy */}
+          <section id="privacy" className="scroll-mt-24">
+            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-white pb-4 text-white">
+              06. PRIVACY BY DESIGN
+            </h2>
+            <div className="prose prose-lg max-w-none">
+              <h3 className="text-2xl font-mono font-bold mb-4 text-white">Guiding Principles</h3>
+
+              <div className="space-y-6">
+                {[
+                  {
+                    principle: "Privacy by Default",
+                    description: "Privacy should not require extra effort. Every part of Moonware OS protects users automatically."
+                  },
+                  {
+                    principle: "Transparency by Choice",
+                    description: "Users decide what they reveal and when. Everything is open for community review."
+                  },
+                  {
+                    principle: "Technology over Trust",
+                    description: "Moonware uses encryption, zero-knowledge proofs, and distributed systems. Privacy depends on code, not trust."
+                  },
+                  {
+                    principle: "Decentralization as Defense",
+                    description: "No single server, company, or government can compromise privacy. Trust spreads across a global network."
+                  },
+                  {
+                    principle: "Simple and Usable",
+                    description: "Privacy should not be complicated. Moonware is designed to be fast and familiar."
+                  },
+                  {
+                    principle: "Open and Verifiable",
+                    description: "The code that protects users must be open to the public. Always transparent about how it works."
+                  },
+                  {
+                    principle: "Freedom for Everyone",
+                    description: "Moonware is for individuals, not institutions. Everyone deserves the right to act freely without being tracked."
+                  },
+                ].map((item, index) => (
+                  <div key={index} className="border-l-4 border-white/40 pl-6">
+                    <h4 className="font-mono font-bold text-lg mb-2 text-white">{item.principle}</h4>
+                    <p className="text-gray-300 text-sm">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Section 7: Getting Started */}
+          <section id="getting-started" className="scroll-mt-24">
+            <h2 className="text-4xl font-mono font-light tracking-wide mb-6 border-b-2 border-white pb-4 text-white">
+              07. GETTING STARTED
+            </h2>
+            <div className="prose prose-lg max-w-none">
+              <h3 className="text-2xl font-mono font-bold mb-6 text-white">For Users</h3>
               
-              <div className="bg-gray-900 text-white p-6 rounded font-mono text-sm mb-8">
+              <div className="bg-[#0a0a0a] border-2 border-white/20 text-white p-6 font-mono text-sm mb-8">
                 <div className="text-gray-400 mb-4"># Quick Start Guide</div>
-                <div className="space-y-2">
-                  <div><span className="text-green-400">1.</span> Download SeekerSIM app from Solana dApp Store</div>
-                  <div><span className="text-green-400">2.</span> Connect your Seed Vault wallet</div>
-                  <div><span className="text-green-400">3.</span> Select destination and data package</div>
-                  <div><span className="text-green-400">4.</span> Pay with SOL/USDC</div>
-                  <div><span className="text-green-400">5.</span> Scan QR code to activate eSIM</div>
-                  <div><span className="text-green-400">6.</span> Connected! Enjoy global connectivity</div>
+                <div className="space-y-2 text-gray-300">
+                  <div><span className="text-white font-bold">1.</span> Connect your Solana wallet</div>
+                  <div><span className="text-white font-bold">2.</span> Enable MoonOS for ephemeral sessions</div>
+                  <div><span className="text-white font-bold">3.</span> Use MoonPay for private payments</div>
+                  <div><span className="text-white font-bold">4.</span> Route transactions through ShadowNet</div>
+                  <div><span className="text-white font-bold">5.</span> Communicate privately with Darkrelay</div>
+                  <div><span className="text-white font-bold">6.</span> Stay invisible. Privacy by default.</div>
                 </div>
               </div>
 
-              <h3 className="text-2xl font-mono font-bold mb-6 mt-12">For Developers</h3>
+              <h3 className="text-2xl font-mono font-bold mb-6 mt-12 text-white">For Developers</h3>
               
-              <div className="bg-gray-900 text-white p-6 rounded font-mono text-sm mb-8">
-                <div className="text-gray-400 mb-4"># API Integration Example</div>
-                <pre className="text-sm overflow-x-auto">
-{`// Initialize SeekerSIM SDK
-import { SeekerSIM } from '@seekersim/sdk'
+              <div className="bg-[#0a0a0a] border-2 border-white/20 text-white p-6 font-mono text-sm mb-8">
+                <div className="text-gray-400 mb-4"># Moonware OS SDK Example</div>
+                <pre className="text-xs overflow-x-auto text-gray-300">
+{`import { MoonwareOS } from '@moonwareos/sdk'
 
-const client = new SeekerSIM({
+const moonware = new MoonwareOS({
   network: 'mainnet',
-  apiKey: process.env.SEEKERSIM_API_KEY
+  apiKey: process.env.MOONWARE_API_KEY
 })
 
-// Purchase eSIM plan
-const result = await client.provision({
-  country: 'FR',
-  dataAmount: '1GB',
-  duration: '7days',
-  wallet: userWalletAddress
+// Create private payment link
+const payment = await moonware.moonPay.create({
+  amount: '10 USDC',
+  token: 'USDC'
 })
 
-// Result includes QR code and activation details
-console.log(result.qrCode)
-console.log(result.activationCode)`}
+// Send private transaction
+const tx = await moonware.shadowNet.send({
+  to: recipientAddress,
+  amount: '1 SOL',
+  stealth: true
+})
+
+// Send encrypted message
+await moonware.darkrelay.send({
+  to: recipientMoonID,
+  message: encryptedData,
+  hpke: true
+})`}
                 </pre>
               </div>
 
-              <div className="border-2 border-blue-200 bg-blue-50 p-6 mt-8">
-                <h4 className="font-mono font-bold mb-3">📚 API DOCUMENTATION</h4>
-                <p className="text-sm text-gray-700 mb-4">
-                  Full API reference, SDK documentation, and integration guides coming soon.
+              <div className="border-2 border-white/20 bg-[#1a1a1a] p-6 mt-8">
+                <h4 className="font-mono font-bold mb-3 text-white">📚 DOCUMENTATION</h4>
+                <p className="text-sm text-gray-300 mb-4">
+                  Full API reference, SDK documentation, and integration guides available.
                 </p>
                 <div className="flex space-x-4">
-                  <a href="#" className="px-4 py-2 bg-black text-white font-mono text-sm hover:bg-gray-800 transition-colors">
+                  <a href="/api-access" className="px-4 py-2 bg-white text-black font-mono text-sm hover:bg-gray-200 transition-colors">
                     API Reference
                   </a>
-                  <a href="#" className="px-4 py-2 border-2 border-black font-mono text-sm hover:bg-black hover:text-white transition-all">
+                  <a href="#" className="px-4 py-2 border-2 border-white font-mono text-sm hover:bg-white hover:text-black transition-all text-white">
                     SDK Docs
                   </a>
                 </div>
@@ -707,4 +406,3 @@ console.log(result.activationCode)`}
     </div>
   )
 }
-

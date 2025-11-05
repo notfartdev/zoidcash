@@ -16,26 +16,26 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "SeekerSIM™ - Blockchain eSIM for Solana Seeker Phones",
+  title: "Moonware OS - Privacy Layer of Solana",
   description:
-    "GSMA-compliant blockchain eSIM and IoT connectivity platform compatible with Solana Seeker phones. Advanced AI-powered solutions with global reach, powered by Vercel infrastructure.",
-  keywords: "eSIM, IoT, blockchain, Solana, Seeker phone, GSMA, AI, connectivity, telecommunications, Vercel, edge computing, SGP.22",
-  authors: [{ name: "SeekerSIM" }],
+    "The privacy layer of Solana. A modular system that makes privacy a native feature of the blockchain. From stealth transactions to encrypted communication, Moonware enables you to stay invisible while staying connected.",
+  keywords: "privacy, Solana, blockchain, stealth addresses, zero-knowledge proofs, encrypted communication, privacy layer, Moonware, anonymity, DeFi privacy",
+  authors: [{ name: "Moonware OS" }],
   robots: "index, follow",
   openGraph: {
-    title: "SeekerSIM™ - Blockchain eSIM for Solana Seeker Phones",
-    description: "GSMA-compliant blockchain eSIM and IoT connectivity platform compatible with Solana Seeker phones",
+    title: "Moonware OS - Privacy Layer of Solana",
+    description: "The privacy layer of Solana. A modular system that makes privacy a native feature of the blockchain.",
     type: "website",
     locale: "en_US",
-    siteName: "SeekerSIM",
+    siteName: "Moonware OS",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SeekerSIM™ - Blockchain eSIM for Solana Seeker Phones",
-    description: "GSMA-compliant blockchain eSIM and IoT connectivity platform compatible with Solana Seeker phones",
+    title: "Moonware OS - Privacy Layer of Solana",
+    description: "The privacy layer of Solana. A modular system that makes privacy a native feature of the blockchain.",
   },
   viewport: "width=device-width, initial-scale=1",
-  themeColor: "#000000",
+  themeColor: "#0a0a0a",
   manifest: "/manifest.json",
     generator: 'v0.app'
 }
