@@ -264,7 +264,7 @@ export default function VercelSection() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-10">
                 <div className="text-center group cursor-pointer">
                   <div className="w-20 h-20 border-2 border-white flex items-center justify-center mb-3 relative transition-all duration-300 group-hover:bg-white group-hover:text-black group-hover:shadow-lg group-hover:shadow-white/50">
-                    <span className="text-xs font-mono font-bold text-white transition-colors duration-300">MOONOS</span>
+                    <span className="text-xs font-mono font-bold text-white transition-colors duration-300">ZOID OS</span>
                     <div className="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full animate-pulse" style={{ animationDuration: "2s" }}></div>
                   </div>
                   <span className="text-xs text-gray-400 font-mono uppercase tracking-wide">Privacy OS</span>

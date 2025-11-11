@@ -16,22 +16,22 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Moonware OS - Privacy Layer of Solana",
+  title: "Zoidcash - Privacy Layer of Solana",
   description:
-    "The privacy layer of Solana. A modular system that makes privacy a native feature of the blockchain. From stealth transactions to encrypted communication, Moonware enables you to stay invisible while staying connected.",
-  keywords: "privacy, Solana, blockchain, stealth addresses, zero-knowledge proofs, encrypted communication, privacy layer, Moonware, anonymity, DeFi privacy",
-  authors: [{ name: "Moonware OS" }],
+    "The privacy layer of Solana. A modular system that makes privacy a native feature of the blockchain. From stealth transactions to encrypted communication, Zoidcash enables you to stay invisible while staying connected.",
+  keywords: "privacy, Solana, blockchain, stealth addresses, zero-knowledge proofs, encrypted communication, privacy layer, Zoidcash, anonymity, DeFi privacy",
+  authors: [{ name: "Zoidcash" }],
   robots: "index, follow",
   openGraph: {
-    title: "Moonware OS - Privacy Layer of Solana",
+    title: "Zoidcash - Privacy Layer of Solana",
     description: "The privacy layer of Solana. A modular system that makes privacy a native feature of the blockchain.",
     type: "website",
     locale: "en_US",
-    siteName: "Moonware OS",
+    siteName: "Zoidcash",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Moonware OS - Privacy Layer of Solana",
+    title: "Zoidcash - Privacy Layer of Solana",
     description: "The privacy layer of Solana. A modular system that makes privacy a native feature of the blockchain.",
   },
   viewport: "width=device-width, initial-scale=1",

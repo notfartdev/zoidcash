@@ -8,7 +8,7 @@ import FluidBackground from "../components/FluidBackground"
 
 export default function APIPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-[#e5e5e5] relative">
+    <main className="min-h-screen bg-[#0a0a0a] text-[#e5e5e5] overflow-hidden relative">
       <FluidBackground />
       <Navigation />
       <Suspense fallback={<LoadingSpinner />}>
@@ -39,11 +39,34 @@ function APIContent() {
 
   return (
     <div className="pt-24 pb-20 relative z-10">
-      <div className="max-w-6xl mx-auto px-6">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundImage: `
+            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
+          `,
+            backgroundSize: "60px 60px",
+          }}
+        />
+      </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-32 right-20 w-4 h-4 border border-white opacity-20 rotate-45 animate-pulse"></div>
+        <div className="absolute top-1/3 left-32 w-6 h-6 border border-white opacity-15 animate-bounce"></div>
+        <div className="absolute top-2/3 right-1/4 w-2 h-2 bg-white opacity-30 animate-ping"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-12 h-1 bg-white opacity-10 rotate-12"></div>
+        <div className="absolute top-1/2 right-10 w-8 h-8 border border-white opacity-10 rotate-45"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="mb-16 text-center">
           <h1 className="text-6xl font-light tracking-wider mb-6 font-mono text-white">
-            MOON<span className="font-bold">WARE</span> API
+            ZOID<span className="font-bold">CASH</span> API
           </h1>
           <div className="w-32 h-px bg-white mx-auto mb-8"></div>
           <p className="text-2xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
@@ -58,7 +81,7 @@ function APIContent() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Left: API Info */}
           <div>
-            <h2 className="text-3xl font-mono font-bold mb-8 tracking-wide text-white">MOONWARE OS API</h2>
+            <h2 className="text-3xl font-mono font-bold mb-8 tracking-wide text-white">ZOIDCASH API</h2>
             
             <p className="text-gray-300 leading-relaxed mb-8 text-lg">
               Build privacy into your Solana applications with our powerful API. Programmatically create stealth transactions, 
@@ -74,31 +97,24 @@ function APIContent() {
                 </p>
               </div>
 
-              <div className="border-2 border-white/20 bg-[#1a1a1a] p-6 hover:border-white/40 transition-all duration-300">
-                <h3 className="font-mono font-bold text-lg mb-3 text-white">💬 ENCRYPTED MESSAGING</h3>
-                <p className="text-gray-300 text-sm">
-                  End-to-end encrypted messaging with HPKE. Metadata-free communications with Darkrelay messaging layer.
-                </p>
-              </div>
-
               <div className="border-2 border-white/30 bg-[#1a1a1a] p-6 hover:border-white/50 transition-all duration-300">
                 <h3 className="font-mono font-bold text-lg mb-3 text-white">💳 PRIVATE PAYMENTS</h3>
                 <p className="text-gray-300 text-sm">
-                  Generate private pay links with MoonPay. Stealth addresses enable unlinkable transactions. Receiver stays invisible.
+                  Generate private pay links with ZoidPay. Stealth addresses enable unlinkable transactions. Receiver stays invisible.
                 </p>
               </div>
 
               <div className="border-2 border-white/20 bg-[#1a1a1a] p-6 hover:border-white/40 transition-all duration-300">
                 <h3 className="font-mono font-bold text-lg mb-3 text-white">🔄 PRIVATE DEFI</h3>
                 <p className="text-gray-300 text-sm">
-                  Execute private swaps with MoonRoute. Multi-party computation and zero-knowledge proofs for complete anonymity.
+                  Execute private swaps with ZoidRoute. Multi-party computation and zero-knowledge proofs for complete anonymity.
                 </p>
               </div>
 
               <div className="border-2 border-white/20 bg-[#1a1a1a] p-6 hover:border-white/40 transition-all duration-300">
                 <h3 className="font-mono font-bold text-lg mb-3 text-white">🛡️ IDENTITY PROTECTION</h3>
                 <p className="text-gray-300 text-sm">
-                  MoonMask API for ephemeral identities. Rotating Moon IDs prevent linkability across all interactions.
+                  ZoidMask API for ephemeral identities. Rotating Zoid IDs prevent linkability across all interactions.
                 </p>
               </div>
             </div>
@@ -199,7 +215,7 @@ function APIContent() {
                       onChange={(e) => setUseCase(e.target.value)}
                       rows={4}
                       className="w-full border-2 border-white/20 bg-[#0a0a0a] text-white p-3 font-mono text-sm focus:border-white focus:outline-none transition-colors resize-none"
-                      placeholder="Describe how you plan to use the Moonware OS API..."
+                      placeholder="Describe how you plan to use the Zoidcash API..."
                     />
                   </div>
 
@@ -254,7 +270,7 @@ function APIContent() {
               </div>
               <div className="bg-[#0a0a0a] text-white p-6">
                 <pre className="font-mono text-xs overflow-x-auto text-gray-300">
-{`POST /api/v1/moonpay/create
+{`POST /api/v1/zoidpay/create
 
 {
   "amount": "10 USDC",
@@ -265,7 +281,7 @@ function APIContent() {
 Response:
 {
   "success": true,
-  "payLink": "moonware.os/pay/...",
+  "payLink": "zoidcash.xyz/pay/...",
   "stealthAddress": "hidden",
   "qrCode": "..."
 }`}
@@ -300,40 +316,14 @@ Response:
               </div>
             </div>
 
-            {/* Code Example 3: Encrypted Message */}
-            <div className="border-2 border-white/20 bg-[#1a1a1a]">
-              <div className="bg-[#0a0a0a] text-white p-4 border-b-2 border-white/20">
-                <div className="font-mono text-sm font-bold uppercase tracking-wide">Send Encrypted Message</div>
-              </div>
-              <div className="bg-[#0a0a0a] text-white p-6">
-                <pre className="font-mono text-xs overflow-x-auto text-gray-300">
-{`POST /api/v1/darkrelay/send
-
-{
-  "to": "moonID_...",
-  "message": "encrypted_data",
-  "hpke": true
-}
-
-Response:
-{
-  "success": true,
-  "messageId": "...",
-  "commitment": "on-chain",
-  "metadata": "zero"
-}`}
-                </pre>
-              </div>
-            </div>
-
-            {/* Code Example 4: Private Swap */}
+            {/* Code Example 3: Private Swap */}
             <div className="border-2 border-white/20 bg-[#1a1a1a]">
               <div className="bg-[#0a0a0a] text-white p-4 border-b-2 border-white/20">
                 <div className="font-mono text-sm font-bold uppercase tracking-wide">Execute Private Swap</div>
               </div>
               <div className="bg-[#0a0a0a] text-white p-6">
                 <pre className="font-mono text-xs overflow-x-auto text-gray-300">
-{`POST /api/v1/moonroute/swap
+{`POST /api/v1/zoidroute/swap
 
 {
   "from": "USDC",
@@ -372,12 +362,6 @@ Response:
                 icon: "🔄",
                 description: "Enable private swaps and DeFi operations. Protect user trading strategies from front-running.",
                 examples: ["DEX aggregators", "Yield farms", "Lending platforms"],
-              },
-              {
-                title: "MESSAGING APPS",
-                icon: "💬",
-                description: "Build encrypted messaging on Solana. Metadata-free communications with Darkrelay integration.",
-                examples: ["Chat apps", "DAO communication", "Private forums"],
               },
               {
                 title: "PRIVACY TOOLS",

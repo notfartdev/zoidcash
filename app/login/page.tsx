@@ -37,14 +37,14 @@ export default function LoginPage() {
       
       <div className="relative z-10 flex items-center justify-center min-h-screen py-24">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-10">
           <div
             className="h-full w-full"
             style={{
               backgroundImage: `
-                linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
-              `,
+            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
+          `,
               backgroundSize: "60px 60px",
             }}
           />
@@ -55,13 +55,15 @@ export default function LoginPage() {
           <div className="absolute top-20 left-20 w-4 h-4 border border-white opacity-20 rotate-45 animate-pulse"></div>
           <div className="absolute bottom-32 right-32 w-6 h-6 border border-white opacity-15 animate-bounce"></div>
           <div className="absolute top-1/3 right-20 w-2 h-2 bg-white opacity-30 animate-ping"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-12 h-1 bg-white opacity-10 rotate-12"></div>
+          <div className="absolute top-1/2 left-10 w-8 h-8 border border-white opacity-10 rotate-45"></div>
         </div>
 
         <div className="relative z-10 w-full max-w-md mx-auto px-6">
           {/* Logo/Header */}
           <div className="text-center mb-12">
             <h1 className="text-6xl font-light tracking-wider mb-4 font-mono text-white">
-              MOON<span className="font-bold">WARE</span> OS
+              ZOID<span className="font-bold">CASH</span>
             </h1>
             <div className="w-24 h-px bg-white mx-auto mb-6"></div>
             <p className="text-lg text-gray-400 font-mono">PLATFORM ACCESS</p>
@@ -76,7 +78,7 @@ export default function LoginPage() {
               <div>
                 <h3 className="font-mono font-bold text-sm mb-2 uppercase tracking-wide text-white">Whitelist Only</h3>
                 <p className="text-sm text-gray-300 leading-relaxed">
-                  Moonware OS is currently in private beta. Access is restricted to whitelisted wallets only.
+                  Zoidcash is currently in private beta. Access is restricted to whitelisted wallets only.
                   Join our waitlist to request early access.
                 </p>
               </div>
@@ -186,10 +188,10 @@ export default function LoginPage() {
           <div className="mt-12 text-center">
             <p className="text-xs font-mono text-gray-500 mb-2">Need help?</p>
             <a
-              href="mailto:support@moonwareos.com"
+              href="mailto:support@zoidcash.xyz"
               className="text-sm font-mono text-gray-400 hover:text-white transition-colors underline"
             >
-              support@moonwareos.com
+              support@zoidcash.xyz
             </a>
           </div>
         </div>

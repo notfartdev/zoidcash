@@ -1,8 +1,8 @@
-# Moonware OS - Complete Project Concept
+# Zoidcash - Complete Project Concept
 
-## 🌙 Vision Statement
+## 🤖 Vision Statement
 
-**Moonware OS is the privacy layer of Solana** - a modular operating system that makes privacy a native feature of the blockchain. From stealth transactions to encrypted communication, Moonware enables you to stay invisible while staying connected.
+**Zoidcash is the privacy layer of Solana** - a modular operating system that makes privacy a native feature of the blockchain. From stealth transactions to encrypted communication, Zoidcash enables you to stay invisible while staying connected.
 
 > *"Privacy is not about hiding. It is about protecting what matters."*
 
@@ -10,31 +10,30 @@
 
 ## 🎯 Our Mission
 
-We believe privacy is not a privilege but a right. Moonware OS exists to restore digital freedom by building privacy, anonymity, and control into Solana. Our tools let you transact, communicate, and build without exposure or surveillance.
+We believe privacy is not a privilege but a right. Zoidcash exists to restore digital freedom by building privacy, anonymity, and control into Solana. Our tools let you transact, communicate, and build without exposure or surveillance.
 
-Moonware OS is for anyone who values autonomy, security, and choice. We are creating a world where people can use public blockchains without giving up privacy.
+Zoidcash is for anyone who values autonomy, security, and choice. We are creating a world where people can use public blockchains without giving up privacy.
 
 ---
 
 ## 🏗️ What We Are Building
 
-Moonware OS is built as a set of independent yet connected modules. Each one brings a layer of privacy to the Solana ecosystem:
+Zoidcash is built as a set of independent yet connected modules. Each one brings a layer of privacy to the Solana ecosystem:
 
-- **MOONOS** – a secure environment that hides device and user identifiers.
+- **ZOID OS** – a secure environment that hides device and user identifiers.
 - **TX SHADOWNET** – a transaction network that scrambles routes and origins.
 - **ID OBFUSCATION** – one-time identities for unlinkable actions.
-- **DARKRELAY MESSAGING** – encrypted peer-to-peer messaging.
-- **MOONPAY** – private pay links for anonymous payments.
-- **MOONROUTE** – a stealth swap system for private DeFi transactions.
-- **MOONMASK** – identity shield that protects how users appear across all modules.
+- **ZOIDPAY** – private pay links for anonymous payments.
+- **ZOIDROUTE** – a stealth swap system for private DeFi transactions.
+- **ZOIDMASK** – identity shield that protects how users appear across all modules.
 
-Together, these systems create the Moonware OS privacy stack. You can use them individually or as one integrated privacy layer.
+Together, these systems create the Zoidcash privacy stack. You can use them individually or as one integrated privacy layer.
 
 ---
 
 ## 🔒 Privacy by Design
 
-Moonware OS is powered by modern cryptography:
+Zoidcash is powered by modern cryptography:
 
 - **Stealth Addresses** make each payment unlinkable.
 - **HPKE** encrypts messages from sender to receiver.
@@ -47,37 +46,37 @@ Moonware OS is powered by modern cryptography:
 
 ## ⚡ Why Solana
 
-Solana's high speed and scalability make it the perfect foundation for privacy at scale. Moonware OS adds security without slowing it down. You get both performance and protection.
+Solana's high speed and scalability make it the perfect foundation for privacy at scale. Zoidcash adds security without slowing it down. You get both performance and protection.
 
 ---
 
-## 🌙 The Moon Philosophy
+## 🤖 The Zoid Philosophy
 
 1. **Privacy by default, transparency by choice.**
 2. **Cryptography replaces trust.**
 3. **Decentralization is defense.**
 
-Moonware OS is inspired by the Freedom of the Press Foundation and the privacy-by-design movement that followed Edward Snowden's call for a freer internet. Our work continues that legacy with open tools that protect everyone.
+Zoidcash is inspired by the Freedom of the Press Foundation and the privacy-by-design movement that followed Edward Snowden's call for a freer internet. Our work continues that legacy with open tools that protect everyone.
 
 ---
 
 ## 📋 Core Modules
 
-### 1. MOONOS (Core Operating System)
+### 1. ZOID OS (Core Operating System)
 
-**Code**: `MOONOS_001`  
+**Code**: `ZOID OS_001`  
 **Status**: ACTIVE
 
-The secure foundation of Moonware OS. Creates ephemeral sessions that hide device, location, and wallet data. Each session is isolated and destroyed when complete, leaving no trace.
+The secure foundation of Zoidcash. Creates ephemeral sessions that hide device, location, and wallet data. Each session is isolated and destroyed when complete, leaving no trace.
 
 **How It Works:**
 - **Ephemeral Sessions**: Every transaction runs in a short-lived virtual space that's destroyed after completion
-- **Hidden Metadata**: Device info and IP data are stripped or rerouted through Moonware relays
+- **Hidden Metadata**: Device info and IP data are stripped or rerouted through Zoid relays
 - **Isolated Wallet Keys**: Private keys never leave the local environment, separated from interface layer
 - **Secure Routing**: All connections pass through encryption and global relays
 
 **User Experience:**
-Using MoonOS should feel the same as using a normal Solana wallet. The difference is what happens in the background. Every click and transaction goes through a clean environment with no link to past sessions.
+Using Zoidcash should feel the same as using a normal Solana wallet. The difference is what happens in the background. Every click and transaction goes through a clean environment with no link to past sessions.
 
 ---
 
@@ -106,7 +105,7 @@ Private routing network that hides the source and destination of transactions. R
 **Code**: `ID_OBFUS_003`  
 **Status**: SECURED
 
-Removes the concept of fixed identity from Moonware OS. Every action uses new identifiers that cannot be linked to past activity. Even if someone knows one wallet address, they cannot trace what else you've done.
+Removes the concept of fixed identity from Zoidcash. Every action uses new identifiers that cannot be linked to past activity. Even if someone knows one wallet address, they cannot trace what else you've done.
 
 **How It Works:**
 - **One-Time Addresses**: Each transaction creates a new address only sender and receiver can recognize
@@ -122,29 +121,9 @@ Removes the concept of fixed identity from Moonware OS. Every action uses new id
 
 ---
 
-### 4. DARKRELAY MESSAGING (Encrypted Communication)
+### 4. ZOIDPAY (Private Payments)
 
-**Code**: `DARKRELAY_004`  
-**Status**: ACTIVE
-
-Encrypted communication layer allowing users, dApps, and relays to exchange information privately. Combines off-chain encryption with on-chain commitments. Only the intended recipient can read what is sent.
-
-**How It Works:**
-- **End-to-End Encryption**: Every message encrypted using Hybrid Public Key Encryption (HPKE)
-- **Off-Chain Storage**: Encrypted messages stored off-chain, blockchain stores only commitment or reference
-- **Commitment Anchors**: Small on-chain proof that message exists without revealing contents
-- **Selective Disclosure**: Users can choose to share message contents or proofs later if needed
-
-**Use Cases:**
-- Private negotiations and coordination between users or DAOs
-- Anonymous messaging between wallets
-- Secure communication between Moonware modules
-
----
-
-### 5. MOONPAY (Private Payments)
-
-**Code**: `MOONPAY_005`  
+**Code**: `ZOIDPAY_005`  
 **Status**: LIVE
 
 Private payment system that lets users send and receive payments on Solana without revealing wallet addresses. Each pay link creates a unique, one-time payment path that disappears once complete.
@@ -170,9 +149,9 @@ Private payment system that lets users send and receive payments on Solana witho
 
 ---
 
-### 6. MOONROUTE (Private DeFi)
+### 5. ZOIDROUTE (Private DeFi)
 
-**Code**: `MOONROUTE_006`  
+**Code**: `ZOIDROUTE_006`  
 **Status**: ACTIVE
 
 Private swap and routing system for Solana. Lets users swap tokens and route payments without exposing who they are, where assets came from, or how the trade was executed.
@@ -191,23 +170,23 @@ Private swap and routing system for Solana. Lets users swap tokens and route pay
 
 ---
 
-### 7. MOONMASK (Identity Shield)
+### 6. ZOIDMASK (Identity Shield)
 
-**Code**: `MOONMASK_007`  
+**Code**: `ZOIDMASK_007`  
 **Status**: ACTIVE
 
-Identity shield that protects how users appear across Moonware modules. Makes communication, transactions, and on-chain actions unlinkable to any single identity.
+Identity shield that protects how users appear across Zoid modules. Makes communication, transactions, and on-chain actions unlinkable to any single identity.
 
 **How It Works:**
-- **Anonymous Session Creation**: Spins up ephemeral session with random Moon ID, no link to wallet or IP
-- **Dynamic Identity Rotation**: Moon ID changes automatically over time or after each action
-- **Encrypted Communication**: Integrates with Darkrelay for protected chats, memos, and metadata
-- **Decoupled Wallet Linking**: Uses stealth addresses and temporary keys so Moon ID never directly interacts with wallet
+- **Anonymous Session Creation**: Spins up ephemeral session with random Zoid ID, no link to wallet or IP
+- **Dynamic Identity Rotation**: Zoid ID changes automatically over time or after each action
+- **Encrypted Metadata**: All interaction metadata is encrypted and unlinkable
+- **Decoupled Wallet Linking**: Uses stealth addresses and temporary keys so Zoid ID never directly interacts with wallet
 
 **Features:**
-- Ephemeral Moon IDs: Anonymous identifiers that rotate per session or action
-- Device Fingerprint Protection: MoonOS obfuscates environment data to prevent correlation attacks
-- Seamless Integration: Works across all Moonware modules
+- Ephemeral Zoid IDs: Anonymous identifiers that rotate per session or action
+- Device Fingerprint Protection: Zoidcash obfuscates environment data to prevent correlation attacks
+- Seamless Integration: Works across all Zoid modules
 - Encrypted Metadata: Protects not just data but also the context of interactions
 
 ---
@@ -216,8 +195,8 @@ Identity shield that protects how users appear across Moonware modules. Makes co
 
 ### Transaction Processing Pipeline
 
-1. **USER ACTION** (MoonOS)
-   - User initiates action through MoonOS interface
+1. **USER ACTION** (Zoidcash)
+   - User initiates action through Zoidcash interface
    - Ephemeral session created, device & user identifiers hidden
 
 2. **ID OBFUSCATION**
@@ -281,7 +260,7 @@ Identity shield that protects how users appear across Moonware modules. Makes co
 ### Privacy Layer Architecture
 
 1. **Client Layer**
-   - Wallet Client (MoonOS)
+   - Wallet Client (Zoidcash)
    - Web App (Browser)
    - Mobile App (Future)
 
@@ -331,13 +310,13 @@ Identity shield that protects how users appear across Moonware modules. Makes co
 
 ## 🎨 Design Philosophy
 
-### Dark Moon Aesthetic
+### Dark Tech Aesthetic
 
-**Visual Theme**: Deep space, moon-like atmosphere
+**Visual Theme**: Deep space, cybernetic atmosphere
 - **Background**: Deep black (#0a0a0a) with subtle animated gradients
-- **Accents**: Soft purple, indigo, and blue glows (moonlight effect)
+- **Accents**: Soft purple, indigo, and blue glows (cybernetic effect)
 - **Typography**: Monospace fonts for technical, precise feel
-- **Animations**: Smooth, fluid movements (like moon phases)
+- **Animations**: Smooth, fluid movements (like digital flows)
 
 ### Design Principles
 
@@ -386,7 +365,7 @@ Identity shield that protects how users appear across Moonware modules. Makes co
 - Complete anonymity
 
 ### 5. Privacy-Enhanced Applications
-- Developers can integrate Moonware OS
+- Developers can integrate Zoidcash
 - Privacy API for existing apps
 - Modular privacy features
 
@@ -452,17 +431,17 @@ Identity shield that protects how users appear across Moonware modules. Makes co
 
 ---
 
-## 🌙 The Moon Metaphor
+## 🤖 The Zoid Metaphor
 
-The moon represents:
-- **Darkness**: Privacy and anonymity
-- **Phases**: Dynamic, changing privacy states
-- **Reflection**: Mirroring user needs without revealing identity
-- **Orbit**: Continuous, smooth operation
-- **Mystery**: The unknown, the hidden
+Zoid represents:
+- **Autonomous**: Privacy through automated protection
+- **Adaptive**: Dynamic, changing privacy states
+- **Efficient**: Streamlined user needs without revealing identity
+- **Persistent**: Continuous, smooth operation
+- **Hidden**: Operating beneath the surface
 
-Moonware OS embodies these qualities - operating in the shadows, providing privacy as naturally as the moon provides darkness, while maintaining the functionality and connectivity of modern blockchain technology.
+Zoidcash embodies these qualities - operating in the shadows, providing privacy through advanced technology, while maintaining the functionality and connectivity of modern blockchain technology.
 
 ---
 
-**"Stay invisible while staying connected. Moonware OS - The Privacy Layer of Solana."**
+**"Stay invisible while staying connected. Zoidcash - The Privacy Layer of Solana."**

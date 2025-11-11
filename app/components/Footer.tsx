@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Github, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
 
 export default function Footer() {
   const [systemStatus, setSystemStatus] = useState({
@@ -79,11 +79,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <h3 className="font-mono font-bold text-3xl sm:text-4xl mb-6 sm:mb-8 tracking-wider text-white">
-              MOON<span className="font-light">WARE</span>
-              <span className="text-xl"> OS</span>
+              ZOID<span className="font-light">CASH</span>
             </h3>
             <p className="text-gray-400 mb-8 sm:mb-10 leading-relaxed text-base sm:text-lg">
-              The privacy layer of Solana. A modular system that makes privacy a native feature of the blockchain. From stealth transactions to encrypted communication, Moonware enables you to stay invisible while staying connected.
+              The privacy layer of Solana. A modular system that makes privacy a native feature of the blockchain. From stealth transactions to encrypted communication, Zoidcash enables you to stay invisible while staying connected.
             </p>
 
             <div className="border-2 border-white/20 p-6 sm:p-8 inline-block w-full sm:w-auto hover:border-white transition-colors duration-300 mb-8">
@@ -128,9 +127,9 @@ export default function Footer() {
                   <div className="text-gray-400 text-xs font-mono uppercase tracking-wide">EMAIL</div>
                 </div>
                 <div className="font-mono text-gray-400 group-hover:text-white transition-colors pl-7">
-                  contact@moonwareos.com
+                  contact@zoidcash.xyz
                   <br />
-                  support@moonwareos.com
+                  support@zoidcash.xyz
                 </div>
               </div>
               <div className="group">
@@ -141,30 +140,14 @@ export default function Footer() {
                   <div className="text-gray-400 text-xs font-mono uppercase tracking-wide">TWITTER</div>
                 </div>
                 <a 
-                  href="https://x.com/moonwareos" 
+                  href="https://x.com/zoidcash" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="font-mono text-gray-400 group-hover:text-white transition-colors pl-7 hover:underline"
                 >
-                  @moonwareos
+                  @zoidcash
                   <br />
                   <span className="text-sm text-gray-500">Follow for updates</span>
-                </a>
-              </div>
-              <div className="group">
-                <div className="flex items-center space-x-3 mb-2">
-                  <Github size={16} className="text-gray-400" />
-                  <div className="text-gray-400 text-xs font-mono uppercase tracking-wide">GITHUB</div>
-                </div>
-                <a
-                  href="https://github.com/moonwareos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-gray-400 group-hover:text-white transition-colors pl-7 hover:underline"
-                >
-                  moonwareos/moonware
-                  <br />
-                  <span className="text-sm text-gray-500">View source & issues</span>
                 </a>
               </div>
             </div>
@@ -205,7 +188,7 @@ export default function Footer() {
         <div className="mt-16 sm:mt-20 pt-8 sm:pt-10 border-t-2 border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400 font-mono mb-6 md:mb-0">
-              © 2025 MOONWARE OS. ALL RIGHTS RESERVED. • PRIVACY LAYER OF SOLANA
+              © 2025 ZOIDCASH. ALL RIGHTS RESERVED. • PRIVACY LAYER OF SOLANA
             </div>
 
             <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 sm:gap-8 text-xs sm:text-sm font-mono">

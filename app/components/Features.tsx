@@ -1,23 +1,23 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Monitor, Network, UserX, MessageSquare, Wallet, RefreshCw, Shield } from "lucide-react"
+import { Monitor, Network, UserX, Wallet, RefreshCw, Shield } from "lucide-react"
 
 export default function Features() {
   const [activeFeature, setActiveFeature] = useState(0)
 
   const features = [
     {
-      title: "MOONOS",
+      title: "ZOID OS",
       description:
-        "The secure foundation of Moonware OS. Creates ephemeral sessions that hide device, location, and wallet data. Each session is isolated and destroyed when complete, leaving no trace. Privacy starts here.",
-      code: "MOONOS_001",
+        "The secure foundation of Zoidcash. Creates ephemeral sessions that hide device, location, and wallet data. Each session is isolated and destroyed when complete, leaving no trace. Privacy starts here.",
+      code: "ZOIDCASH_001",
       metrics: { privacy: "Default", identifiers: "Hidden", fingerprint: "Erased", metadata: "Zero" },
       status: "ACTIVE",
       icon: Monitor,
       howItWorks: [
         "Ephemeral Sessions: Every transaction runs in a short-lived virtual space that's destroyed after completion",
-        "Hidden Metadata: Device info and IP data are stripped or rerouted through Moonware relays",
+        "Hidden Metadata: Device info and IP data are stripped or rerouted through Zoid relays",
         "Isolated Wallet Keys: Private keys never leave the local environment, separated from interface layer",
         "Secure Routing: All connections pass through encryption and global relays"
       ],
@@ -66,7 +66,7 @@ export default function Features() {
     {
       title: "ID OBFUSCATION",
       description:
-        "Removes the concept of fixed identity from Moonware OS. Every action uses new identifiers that cannot be linked to past activity. Even if someone knows one wallet address, they cannot trace what else you've done.",
+        "Removes the concept of fixed identity from Zoidcash. Every action uses new identifiers that cannot be linked to past activity. Even if someone knows one wallet address, they cannot trace what else you've done.",
       code: "ID_OBFUS_003",
       metrics: { identities: "One-time", aliases: "Unlimited", linking: "Unlinkable", zk: "PLONK" },
       status: "SECURED",
@@ -94,39 +94,10 @@ export default function Features() {
       ),
     },
     {
-      title: "DARKRELAY MESSAGING",
-      description:
-        "Encrypted communication layer allowing users, dApps, and relays to exchange information privately. Combines off-chain encryption with on-chain commitments. Only the intended recipient can read what is sent.",
-      code: "DARKRELAY_004",
-      metrics: { encryption: "HPKE", p2p: "True", metadata: "Zero", privacy: "100%" },
-      status: "ACTIVE",
-      icon: MessageSquare,
-      howItWorks: [
-        "End-to-End Encryption: Every message encrypted using Hybrid Public Key Encryption (HPKE)",
-        "Off-Chain Storage: Encrypted messages stored off-chain, blockchain stores only commitment or reference",
-        "Commitment Anchors: Small on-chain proof that message exists without revealing contents",
-        "Selective Disclosure: Users can choose to share message contents or proofs later if needed"
-      ],
-      schematic: (
-        <svg width="100%" height="60" viewBox="0 0 200 60">
-          <rect x="30" y="20" width="40" height="20" fill="none" stroke="#fff" strokeWidth="1" opacity="0.8" />
-          <line x1="35" y1="25" x2="65" y2="25" stroke="#fff" strokeWidth="1" opacity="0.8" />
-          <line x1="35" y1="30" x2="60" y2="30" stroke="#fff" strokeWidth="1" opacity="0.8" />
-          <line x1="35" y1="35" x2="55" y2="35" stroke="#fff" strokeWidth="1" opacity="0.8" />
-          <path d="M 70 30 Q 85 25 100 30" fill="none" stroke="#fff" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
-          <path d="M 100 30 Q 115 35 130 30" fill="none" stroke="#fff" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
-          <rect x="130" y="20" width="40" height="20" fill="none" stroke="#fff" strokeWidth="1" opacity="0.8" />
-          <line x1="135" y1="25" x2="165" y2="25" stroke="#fff" strokeWidth="1" opacity="0.8" />
-          <line x1="135" y1="30" x2="160" y2="30" stroke="#fff" strokeWidth="1" opacity="0.8" />
-          <line x1="135" y1="35" x2="155" y2="35" stroke="#fff" strokeWidth="1" opacity="0.8" />
-        </svg>
-      ),
-    },
-    {
-      title: "MOONPAY",
+      title: "ZOIDPAY",
       description:
         "Private payment system that lets users send and receive payments on Solana without revealing wallet addresses. Each pay link creates a unique, one-time payment path that disappears once complete. Receiver stays invisible, transaction details stay unlinkable.",
-      code: "MOONPAY_005",
+      code: "ZOIDPAY_005",
       metrics: { payments: "Anonymous", linking: "Unlinkable", stealth: "Enabled", trace: "Zero" },
       status: "LIVE",
       icon: Wallet,
@@ -153,10 +124,10 @@ export default function Features() {
       ),
     },
     {
-      title: "MOONROUTE",
+      title: "ZOIDROUTE",
       description:
         "Private swap and routing system for Solana. Lets users swap tokens and route payments without exposing who they are, where assets came from, or how the trade was executed. Pairs stealth addresses with ShadowNet relays for hidden end-to-end trade paths.",
-      code: "MOONROUTE_006",
+      code: "ZOIDROUTE_006",
       metrics: { defi: "Private", mpc: "Enabled", zk: "PLONK", swaps: "Stealth" },
       status: "ACTIVE",
       icon: RefreshCw,
@@ -184,18 +155,18 @@ export default function Features() {
       ),
     },
     {
-      title: "MOONMASK",
+      title: "ZOIDMASK",
       description:
-        "Identity shield that protects how users appear across Moonware modules. Makes communication, transactions, and on-chain actions unlinkable to any single identity. Hides wallet addresses, usernames, and device fingerprints while allowing seamless interaction.",
-      code: "MOONMASK_007",
+        "Identity shield that protects how users appear across Zoid modules. Makes communication, transactions, and on-chain actions unlinkable to any single identity. Hides wallet addresses, usernames, and device fingerprints while allowing seamless interaction.",
+      code: "ZOIDMASK_007",
       metrics: { identities: "Ephemeral", rotation: "Dynamic", fingerprint: "Protected", linking: "Impossible" },
       status: "ACTIVE",
       icon: Shield,
       howItWorks: [
-        "Anonymous Session Creation: Spins up ephemeral session with random Moon ID, no link to wallet or IP",
-        "Dynamic Identity Rotation: Moon ID changes automatically over time or after each action",
-        "Encrypted Communication: Integrates with Darkrelay for protected chats, memos, and metadata",
-        "Decoupled Wallet Linking: Uses stealth addresses and temporary keys so Moon ID never directly interacts with wallet"
+        "Anonymous Session Creation: Spins up ephemeral session with random Zoid ID, no link to wallet or IP",
+        "Dynamic Identity Rotation: Zoid ID changes automatically over time or after each action",
+        "Encrypted Metadata: All interaction metadata is encrypted and unlinkable",
+        "Decoupled Wallet Linking: Uses stealth addresses and temporary keys so Zoid ID never directly interacts with wallet"
       ],
       schematic: (
         <svg width="100%" height="60" viewBox="0 0 200 60">
@@ -592,7 +563,7 @@ export default function Features() {
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6 mt-10 sm:mt-12 pt-8 sm:pt-10 border-t-2 border-white/20">
             <div className="text-center">
               <div className="text-xs font-mono text-gray-500 mb-3 uppercase tracking-wider">STEP 1</div>
-              <div className="text-sm font-mono font-bold mb-2 tracking-wide text-white">MOONOS</div>
+              <div className="text-sm font-mono font-bold mb-2 tracking-wide text-white">ZOIDCASH</div>
               <div className="text-xs text-gray-400 leading-relaxed">Hides device & user identifiers</div>
             </div>
             <div className="text-center">

@@ -8,7 +8,7 @@ import FluidBackground from "../components/FluidBackground"
 
 export default function DocsPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-[#e5e5e5] relative">
+    <main className="min-h-screen bg-[#0a0a0a] text-[#e5e5e5] overflow-hidden relative">
       <FluidBackground />
       <Navigation />
       <Suspense fallback={<LoadingSpinner />}>
@@ -22,11 +22,34 @@ export default function DocsPage() {
 function DocsContent() {
   return (
     <div className="pt-24 pb-20 relative z-10">
-      <div className="max-w-5xl mx-auto px-6">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundImage: `
+            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
+          `,
+            backgroundSize: "60px 60px",
+          }}
+        />
+      </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-32 left-20 w-4 h-4 border border-white opacity-20 rotate-45 animate-pulse"></div>
+        <div className="absolute top-1/4 right-32 w-6 h-6 border border-white opacity-15 animate-bounce"></div>
+        <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-white opacity-30 animate-ping"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-12 h-1 bg-white opacity-10 rotate-12"></div>
+        <div className="absolute top-2/3 left-10 w-8 h-8 border border-white opacity-10 rotate-45"></div>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="mb-16">
           <h1 className="text-6xl font-light tracking-wider mb-6 font-mono text-white">
-            MOON<span className="font-bold">WARE</span> OS
+            ZOID<span className="font-bold">CASH</span>
           </h1>
           <div className="w-32 h-px bg-white mb-8"></div>
           <p className="text-2xl text-gray-400 leading-relaxed">
@@ -70,8 +93,8 @@ function DocsContent() {
             </h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-300 leading-relaxed mb-6">
-                Moonware OS is the privacy layer of Solana. It is a modular system that makes privacy a native feature 
-                of the blockchain. From stealth transactions to encrypted communication, Moonware enables you to stay 
+                Zoidcash is the privacy layer of Solana. It is a modular system that makes privacy a native feature 
+                of the blockchain. From stealth transactions to encrypted communication, Zoidcash enables you to stay 
                 invisible while staying connected.
               </p>
               
@@ -80,7 +103,7 @@ function DocsContent() {
                 <p className="text-white font-mono">
                   "Privacy is not about hiding. It is about protecting what matters."
                 </p>
-                <div className="mt-2 text-xs text-gray-500 font-mono">- The Moonware OS Team</div>
+                <div className="mt-2 text-xs text-gray-500 font-mono">- The Zoidcash Team</div>
               </div>
 
               <div className="grid grid-cols-3 gap-6 my-8">
@@ -109,7 +132,7 @@ function DocsContent() {
               <h3 className="text-2xl font-mono font-bold mb-4 text-white">Our Mission</h3>
               
               <p className="text-gray-300 leading-relaxed mb-6">
-                We believe privacy is not a privilege but a right. Moonware OS exists to restore digital freedom by 
+                We believe privacy is not a privilege but a right. Zoidcash exists to restore digital freedom by 
                 building privacy, anonymity, and control into Solana. Our tools let you transact, communicate, and 
                 build without exposure or surveillance.
               </p>
@@ -126,7 +149,7 @@ function DocsContent() {
 
               <h3 className="text-2xl font-mono font-bold mb-4 mt-8 text-white">The Vision</h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Moonware OS was created to make privacy simple, accessible, and built into the core of blockchain. 
+                Zoidcash was created to make privacy simple, accessible, and built into the core of blockchain. 
                 Our vision is a world where every digital interaction can be private by default. We want to make privacy 
                 feel normal again, as natural as sending a message or making a payment.
               </p>
@@ -142,14 +165,14 @@ function DocsContent() {
               <h3 className="text-2xl font-mono font-bold mb-6 text-white">Modular System Design</h3>
 
               <p className="text-gray-300 leading-relaxed mb-8">
-                Moonware OS is built as a set of independent yet connected modules. Each one brings a layer of privacy 
+                Zoidcash is built as a set of independent yet connected modules. Each one brings a layer of privacy 
                 to the Solana ecosystem. You can use them individually or as one integrated privacy layer.
               </p>
 
               <div className="space-y-8">
                 {[
                   {
-                    title: "MOONOS",
+                    title: "ZOID OS",
                     description: "Secure foundation that creates ephemeral sessions. Hides device, location, and wallet data behind temporary, disposable sessions.",
                     features: ["Ephemeral Sessions", "Hidden Metadata", "Isolated Wallet Keys", "Secure Routing"]
                   },
@@ -164,24 +187,19 @@ function DocsContent() {
                     features: ["One-Time Addresses", "Rotating Keys", "No Persistent Identifiers", "MPC Forward Secrecy"]
                   },
                   {
-                    title: "DARKRELAY MESSAGING",
-                    description: "Encrypted communication layer. Combines off-chain encryption with on-chain commitments. Only intended recipient can read.",
-                    features: ["End-to-End Encryption", "Off-Chain Storage", "Commitment Anchors", "Selective Disclosure"]
-                  },
-                  {
-                    title: "MOONPAY",
+                    title: "ZOIDPAY",
                     description: "Private payment system. Each pay link creates a unique, one-time payment path. Receiver stays invisible.",
                     features: ["Stealth Addresses", "ShadowNet Routing", "HPKE Encryption", "Auto Sweep"]
                   },
                   {
-                    title: "MOONROUTE",
+                    title: "ZOIDROUTE",
                     description: "Private swap system for DeFi. Pairs stealth addresses with ShadowNet relays for hidden end-to-end trade paths.",
                     features: ["One-Time Outputs", "Multi-TX Pathways", "Private Execution", "No Linkability"]
                   },
                   {
-                    title: "MOONMASK",
+                    title: "ZOIDMASK",
                     description: "Identity shield that protects how users appear. Makes communication, transactions, and actions unlinkable.",
-                    features: ["Ephemeral Moon IDs", "Dynamic Rotation", "Encrypted Metadata", "Decoupled Wallet Linking"]
+                    features: ["Ephemeral Zoid IDs", "Dynamic Rotation", "Encrypted Metadata", "Decoupled Wallet Linking"]
                   },
                 ].map((module, index) => (
                   <div key={index} className="border-2 border-white/20 bg-[#1a1a1a] p-6 hover:border-white/40 transition-all">
@@ -210,7 +228,7 @@ function DocsContent() {
             </h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-300 leading-relaxed mb-8">
-                Together, these systems create the Moonware OS privacy stack. Each module works independently but 
+                Together, these systems create the Zoidcash privacy stack. Each module works independently but 
                 can be combined for maximum privacy protection.
               </p>
 
@@ -218,7 +236,7 @@ function DocsContent() {
                 <h4 className="font-mono font-bold text-lg mb-4 text-white">PRIVACY-FIRST OPERATING SYSTEM FLOW</h4>
                 <div className="space-y-4">
                   {[
-                    { step: "1", name: "USER ACTION", detail: "MoonOS creates ephemeral session" },
+                    { step: "1", name: "USER ACTION", detail: "Zoidcash creates ephemeral session" },
                     { step: "2", name: "ID OBFUSCATION", detail: "One-time alias generated" },
                     { step: "3", name: "SHADOWNET ROUTING", detail: "Transaction routed through relays" },
                     { step: "4", name: "ENCRYPTION", detail: "HPKE, ZK proofs, MPC applied" },
@@ -246,7 +264,7 @@ function DocsContent() {
             </h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-gray-300 leading-relaxed mb-8">
-                Moonware OS is powered by modern cryptography. Privacy is the default setting. Transparency is a choice.
+                Zoidcash is powered by modern cryptography. Privacy is the default setting. Transparency is a choice.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -294,7 +312,7 @@ function DocsContent() {
                 {[
                   {
                     principle: "Privacy by Default",
-                    description: "Privacy should not require extra effort. Every part of Moonware OS protects users automatically."
+                    description: "Privacy should not require extra effort. Every part of Zoidcash protects users automatically."
                   },
                   {
                     principle: "Transparency by Choice",
@@ -302,7 +320,7 @@ function DocsContent() {
                   },
                   {
                     principle: "Technology over Trust",
-                    description: "Moonware uses encryption, zero-knowledge proofs, and distributed systems. Privacy depends on code, not trust."
+                    description: "Zoidcash uses encryption, zero-knowledge proofs, and distributed systems. Privacy depends on code, not trust."
                   },
                   {
                     principle: "Decentralization as Defense",
@@ -310,7 +328,7 @@ function DocsContent() {
                   },
                   {
                     principle: "Simple and Usable",
-                    description: "Privacy should not be complicated. Moonware is designed to be fast and familiar."
+                    description: "Privacy should not be complicated. Zoidcash is designed to be fast and familiar."
                   },
                   {
                     principle: "Open and Verifiable",
@@ -318,7 +336,7 @@ function DocsContent() {
                   },
                   {
                     principle: "Freedom for Everyone",
-                    description: "Moonware is for individuals, not institutions. Everyone deserves the right to act freely without being tracked."
+                    description: "Zoidcash is for individuals, not institutions. Everyone deserves the right to act freely without being tracked."
                   },
                 ].map((item, index) => (
                   <div key={index} className="border-l-4 border-white/40 pl-6">
@@ -342,10 +360,10 @@ function DocsContent() {
                 <div className="text-gray-400 mb-4"># Quick Start Guide</div>
                 <div className="space-y-2 text-gray-300">
                   <div><span className="text-white font-bold">1.</span> Connect your Solana wallet</div>
-                  <div><span className="text-white font-bold">2.</span> Enable MoonOS for ephemeral sessions</div>
-                  <div><span className="text-white font-bold">3.</span> Use MoonPay for private payments</div>
+                  <div><span className="text-white font-bold">2.</span> Enable Zoidcash for ephemeral sessions</div>
+                  <div><span className="text-white font-bold">3.</span> Use ZoidPay for private payments</div>
                   <div><span className="text-white font-bold">4.</span> Route transactions through ShadowNet</div>
-                  <div><span className="text-white font-bold">5.</span> Communicate privately with Darkrelay</div>
+                  <div><span className="text-white font-bold">5.</span> Execute private swaps with ZoidRoute</div>
                   <div><span className="text-white font-bold">6.</span> Stay invisible. Privacy by default.</div>
                 </div>
               </div>
@@ -353,33 +371,34 @@ function DocsContent() {
               <h3 className="text-2xl font-mono font-bold mb-6 mt-12 text-white">For Developers</h3>
               
               <div className="bg-[#0a0a0a] border-2 border-white/20 text-white p-6 font-mono text-sm mb-8">
-                <div className="text-gray-400 mb-4"># Moonware OS SDK Example</div>
+                <div className="text-gray-400 mb-4"># Zoidcash SDK Example</div>
                 <pre className="text-xs overflow-x-auto text-gray-300">
-{`import { MoonwareOS } from '@moonwareos/sdk'
+{`import { Zoidcash } from '@zoidcash/sdk'
 
-const moonware = new MoonwareOS({
+const zoidcash = new Zoidcash({
   network: 'mainnet',
-  apiKey: process.env.MOONWARE_API_KEY
+  apiKey: process.env.ZOIDCASH_API_KEY
 })
 
 // Create private payment link
-const payment = await moonware.moonPay.create({
+const payment = await zoidcash.zoidPay.create({
   amount: '10 USDC',
   token: 'USDC'
 })
 
 // Send private transaction
-const tx = await moonware.shadowNet.send({
+const tx = await zoidcash.shadowNet.send({
   to: recipientAddress,
   amount: '1 SOL',
   stealth: true
 })
 
-// Send encrypted message
-await moonware.darkrelay.send({
-  to: recipientMoonID,
-  message: encryptedData,
-  hpke: true
+// Execute private swap
+await zoidcash.zoidRoute.swap({
+  from: 'USDC',
+  to: 'SOL',
+  amount: '100',
+  stealth: true
 })`}
                 </pre>
               </div>

@@ -243,7 +243,7 @@ export default function AISection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 sm:mb-20">
           <h2 className="text-3xl sm:text-5xl font-light tracking-wider mb-6 font-mono text-white">
-            MOON<span className="font-bold">WARE</span> PRIVACY
+            ZOID<span className="font-bold">CASH</span> PRIVACY
           </h2>
           <div className="w-24 sm:w-32 h-px bg-white mx-auto mb-6 sm:mb-8"></div>
           <p className="text-gray-400 max-w-3xl mx-auto text-base sm:text-lg">

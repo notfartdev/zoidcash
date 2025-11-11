@@ -91,8 +91,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="font-mono font-bold text-xl tracking-wider shrink-0 text-white">
-            MOON<span className="font-light">WARE</span>
-            <span className="text-sm"> OS</span>
+            ZOID<span className="font-light">CASH</span>
           </div>
 
           <div className="hidden md:flex items-center relative max-w-[60%]">

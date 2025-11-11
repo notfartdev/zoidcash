@@ -217,8 +217,7 @@ export default function Hero() {
 
         <div className="mb-10 sm:mb-12">
           <h1 className="text-4xl sm:text-6xl lg:text-8xl font-light tracking-wider mb-6 font-mono leading-tight text-white">
-            MOON<span className="font-bold">WARE</span>
-            <span className="text-3xl sm:text-5xl lg:text-7xl"> OS</span>
+            ZOID<span className="font-bold">CASH</span>
           </h1>
           <div className="w-32 sm:w-40 h-px bg-white mx-auto mb-6 sm:mb-8 relative">
             <div className="absolute left-0 top-0 h-full bg-white animate-pulse" style={{ width: "100%" }}></div>
