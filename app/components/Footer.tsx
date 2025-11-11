@@ -140,12 +140,12 @@ export default function Footer() {
                   <div className="text-gray-400 text-xs font-mono uppercase tracking-wide">TWITTER</div>
                 </div>
                 <a 
-                  href="https://x.com/zoidcash" 
+                  href="https://x.com/zoidcash_" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="font-mono text-gray-400 group-hover:text-white transition-colors pl-7 hover:underline"
                 >
-                  @zoidcash
+                  @zoidcash_
                   <br />
                   <span className="text-sm text-gray-500">Follow for updates</span>
                 </a>
